@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114214527) do
+ActiveRecord::Schema.define(version: 20141115044143) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "clothings", force: true do |t|
-    t.string   "weather_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "clothing_type"
+    t.string  "clothing_type"
+    t.integer "weather_id"
+    t.string  "weather_type"
   end
+
+  add_index "clothings", ["weather_id"], name: "index_clothings_on_weather_id", using: :btree
+
+  create_table "weathers", force: true do |t|
+    t.integer "destination_id"
+    t.string  "hourly_forecast"
+  end
+
+  add_index "weathers", ["destination_id"], name: "index_weathers_on_destination_id", using: :btree
 
 end
