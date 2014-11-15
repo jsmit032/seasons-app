@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114214527) do
+ActiveRecord::Schema.define(version: 20141115014855) do
 
   create_table "clothings", force: true do |t|
     t.string   "weather_type"
@@ -19,5 +19,16 @@ ActiveRecord::Schema.define(version: 20141114214527) do
     t.datetime "updated_at"
     t.string   "clothing_type"
   end
+
+  create_table "weathers", force: true do |t|
+    t.string   "weather_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "clothing_id"
+    t.integer  "destination_id"
+  end
+
+  add_index "weathers", ["clothing_id"], name: "index_weathers_on_clothing_id"
+  add_index "weathers", ["destination_id"], name: "index_weathers_on_destination_id"
 
 end
