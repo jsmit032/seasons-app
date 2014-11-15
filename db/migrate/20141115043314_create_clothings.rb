@@ -1,10 +1,10 @@
 class CreateClothings < ActiveRecord::Migration
   def change
     create_table :clothings do |t|
-      t.string :type
+      t.string :clothing_type
+      t.references :weather
       t.string :weather_type
-
-      t.timestamps
     end
+    add_index :clothings, :weather_id
   end
 end
