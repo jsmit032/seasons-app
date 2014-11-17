@@ -4,6 +4,5 @@ class CreateWeathers < ActiveRecord::Migration
       t.references :destination, index: true
       t.string :hourly_forecast
     end
-    # add_index :weathers, :destination_id
   end
 end
