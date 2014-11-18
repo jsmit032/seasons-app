@@ -6,6 +6,10 @@ end
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'bower-rails'
+
+gem 'angular-rails-templates'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use pg as the database for Active Record
