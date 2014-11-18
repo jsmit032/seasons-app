@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: seasonapp
   pool: 5
-  username: rails
-  password: rails
+  username: gfofdirtbag
+  password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: seasonapp_test
   pool: 5
-  username: 
+  username: gfofdirtbag
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: seasonapp_production
   pool: 5
-  username: 
+  username: gfofdirtbag
   password:
