@@ -5,7 +5,7 @@ group :development, :test do
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.7'
+gem 'rails', '4.0.4'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
