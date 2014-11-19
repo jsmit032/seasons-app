@@ -11,34 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117174646) do
+ActiveRecord::Schema.define(version: 20141118025744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clothings", force: true do |t|
-    t.string  "clothing_type"
-    t.integer "weather_id"
-    t.string  "weather_type"
+    t.string "clothing_type"
+    t.string "weather_type"
   end
 
-  add_index "clothings", ["weather_id"], name: "index_clothings_on_weather_id", using: :btree
-
-  create_table "destinations", force: true do |t|
-    t.integer  "destination_id"
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "type"
-    t.integer  "zip_code"
+  create_table "weather_to_clothings", force: true do |t|
+    t.integer  "clothing_id"
+    t.integer  "weather_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "weathers", force: true do |t|
-    t.integer "destination_id"
-    t.string  "hourly_forecast"
-  end
+  add_index "weather_to_clothings", ["clothing_id"], name: "index_weather_to_clothings_on_clothing_id", using: :btree
+  add_index "weather_to_clothings", ["weather_id"], name: "index_weather_to_clothings_on_weather_id", using: :btree
 
-  add_index "weathers", ["destination_id"], name: "index_weathers_on_destination_id", using: :btree
+  create_table "weathers", force: true do |t|
+    t.string "weather_type"
+  end
 
 end

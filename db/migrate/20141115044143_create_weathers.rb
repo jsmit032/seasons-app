@@ -1,8 +1,7 @@
 class CreateWeathers < ActiveRecord::Migration
   def change
     create_table :weathers do |t|
-      t.references :destination, index: true
-      t.string :hourly_forecast
+      t.string :weather_type
     end
   end
 end

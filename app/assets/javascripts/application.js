@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Temporaliy remove requiretree . & require tree ../templates to asset commplie for heroku deployment.
+// If this causes issues in further deployment, this could be the cause.
+//
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
@@ -17,5 +20,3 @@
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
-//= require_tree .
-//= require_tree ../templates
