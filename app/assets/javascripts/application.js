@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// Temporaliy remove require_tree . & require_tree ../templates to asset commplie for heroku deployment.
+// Temporaliy remove "require_tree ." & "require_tree ../templates" to asset commplie for heroku deployment.
 // If this causes issues in further deployment, this could be the cause.
 //
 //= require jquery
