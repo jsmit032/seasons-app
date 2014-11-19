@@ -17,8 +17,21 @@ ActiveRecord::Schema.define(version: 20141118025744) do
   enable_extension "plpgsql"
 
   create_table "clothings", force: true do |t|
-    t.string "clothing_type"
-    t.string "weather_type"
+    t.string  "clothing_type"
+    t.integer "weather_id"
+    t.string  "weather_type"
+  end
+
+  add_index "clothings", ["weather_id"], name: "index_clothings_on_weather_id", using: :btree
+
+  create_table "destinations", force: true do |t|
+    t.integer  "destination_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "type"
+    t.integer  "zip_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "weather_to_clothings", force: true do |t|
@@ -32,7 +45,10 @@ ActiveRecord::Schema.define(version: 20141118025744) do
   add_index "weather_to_clothings", ["weather_id"], name: "index_weather_to_clothings_on_weather_id", using: :btree
 
   create_table "weathers", force: true do |t|
-    t.string "weather_type"
+    t.integer "destination_id"
+    t.string  "hourly_forecast"
   end
+
+  add_index "weathers", ["destination_id"], name: "index_weathers_on_destination_id", using: :btree
 
 end
