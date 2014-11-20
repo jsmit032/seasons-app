@@ -17,6 +17,15 @@
 @import 'bootstrap';
 
 
+.right-side-half {
+  height: 500px;
+}
+
+.navbar {
+  background: transparent;
+  border: none;
+}
+
 // navbar force collapse (burger menu all the time)
 .navbar-header {
   float: none;
