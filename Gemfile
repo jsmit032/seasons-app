@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.1.2"
 
+gem 'httparty'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
