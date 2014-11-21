@@ -1,4 +1,4 @@
 class WeatherToClothing < ActiveRecord::Base
-	belongs_to :weather
-	belongs_to :clothing
+	has_many :weather
+	has_many :clothing
 end

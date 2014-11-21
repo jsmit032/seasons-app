@@ -1,4 +1,4 @@
 class UserToDestination < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :destination
+  has_many :user
+  has_many :destination
 end
