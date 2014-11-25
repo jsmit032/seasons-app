@@ -4,7 +4,7 @@
 // .service('weatherService', function($http) {
 //   return {
 //     getWeather: function() {
-//       var promise = $http.getJSON('http://api.wunderground.com/api/2f0b44146ceab5a4/hourly/q/90034.json&callback=?')
+//       var promise = $http.get('http://api.wunderground.com/api/2f0b44146ceab5a4/hourly/q/90034.json')
 //       .then(function(response) {
 //         return reponse;
 //       })
