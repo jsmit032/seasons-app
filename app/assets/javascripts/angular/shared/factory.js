@@ -1,11 +1,14 @@
 angular.module('SeasonsApp')
 
+
+
+
 // factory returns object with keys that can be used in the controller to call function
 // $http calls 
 // .factory('weatherService', ['$http', '$q', function($http, $q) {
 //   function getWeather(zip) {
 //     var deferred = $q.defer();
-//     $http.get('http://api.wunderground.com/api/2f0b44146ceab5a4/conditions/q/CA/' + zip + '.jsonp')
+//     $http.get('http://api.wunderground.com/api/2f0b44146ceab5a4/conditions/q/CA/' + zip + '.json')
 //       .success(function(data) {
 //         deferred.resolve(data.query.results.channel);
 //       })
@@ -19,6 +22,9 @@ angular.module('SeasonsApp')
 //     getWeather: getWeather
 //   };
 // }]);
+
+
+
 
 // yahoo weather api
 .factory('weatherService', ['$http', '$q', function ($http, $q){

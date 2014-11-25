@@ -19,7 +19,7 @@ angular.module('SeasonsApp')
     }); 
   }
   
-  fetchWeather('90034');
+  fetchWeather('');
 
   $scope.findWeather = function(zip) {
     $scope.place = '';

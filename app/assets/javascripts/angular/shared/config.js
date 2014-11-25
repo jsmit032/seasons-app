@@ -1,6 +1,13 @@
 angular.module('SeasonsApp')
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+
+  // $httpProvider.defaults.withCredentials = true;
+  // $httpProvider.defaults.useXDomain = true;
+  // delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+
+  $locationProvider.html5Mode({enabled:true, requireBase:true});
 
   $urlRouterProvider.otherwise('/');
 

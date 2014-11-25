@@ -5,10 +5,18 @@
 
   <!-- weather -->
     <div class="col-xs-12 col-sm-6 col-md-6">
+
+
+      
       <h1>Current Weather</h1>
-      <ul>
-        <li ng-repeat="thing in things">{{thing}}</li>
-      </ul>
+      <form>
+        <input type="number" ng-model="zip">
+        <input type="submit" value="Search" ng-click="findWeather(zip)">
+      </form>
+
+      <p ng-show="zip">Searching the forecasts for: {{zip}}</p>
+      <h1>Forecast For: {{ place.location.city }}</h1>
+      <!-- <h1>Forecast For: {{ place.hourly_forecast }}</h1> -->
 
       
 
