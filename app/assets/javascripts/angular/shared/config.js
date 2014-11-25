@@ -1,3 +1,4 @@
+alert("the world needs more lerts");
 angular.module('SeasonsApp')
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
