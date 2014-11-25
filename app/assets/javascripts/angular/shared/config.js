@@ -1,7 +1,8 @@
-console.log("assets are precomplied!");
 angular.module('SeasonsApp')
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+
+  $locationProvider.html5Mode({enabled:true, requireBase:true});
 
   $urlRouterProvider.otherwise('/');
 
