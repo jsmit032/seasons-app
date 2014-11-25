@@ -1,7 +1,8 @@
-alert("the world needs more lerts");
 angular.module('SeasonsApp')
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+
+  $locationProvider.html5Mode({enabled:true, requireBase:true});
 
   $urlRouterProvider.otherwise('/');
 
