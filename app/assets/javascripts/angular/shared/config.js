@@ -1,4 +1,4 @@
-alert("the world needs more lerts");
+console.log("assets are precomplied!");
 angular.module('SeasonsApp')
 
 .config(function($stateProvider, $urlRouterProvider){
