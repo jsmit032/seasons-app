@@ -8,3 +8,5 @@ class CreateUserToDestinations < ActiveRecord::Migration
     end
   end
 end
+
+
