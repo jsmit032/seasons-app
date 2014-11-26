@@ -26,8 +26,8 @@ default: &default
 development:
   <<: *default
   database: seasonapp
-  username: rails
-  password: rails
+  username: 
+  password: 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,8 +62,8 @@ development:
 test:
   <<: *default
   database: seasonapp_test
-  username: rails 
-  password: rails
+  username:  
+  password: 
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
