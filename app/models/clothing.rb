@@ -1,8 +1,9 @@
 class Clothing < ActiveRecord::Base
+	belongs_to :category
 	has_many :weather_to_clothing
 	has_many :weather, through: :weather_to_clothing
 	
-	attr_accessor :clothing_type, :weather_type
+	attr_accessor :clothing_type
 
 	def clothing_type
 		"T-shirt"
