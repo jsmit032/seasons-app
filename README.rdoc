@@ -1,28 +1,88 @@
-== README
+Season App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Description
 
-Things you may want to cover:
+Season App is a pratical weather app, that not only informs you about the weather for the day/night, but suggust apperal and accessories needed throughout the day. Never forget your umbrella again! Season will let you know when there is a chance of rain.
 
-* Ruby version
+As of now Seasons is a web application, but further development goals involved a moblie app that notifies you at the beginning of the day of important clothing needs.
 
-* System dependencies
+=== Requirements & Technologies
+Season App requires the following dependencies
 
-* Configuration
+* Ruby 2.0.x
+* Rails 4.1.7
+* Rubygems
+* PostgreSQL
+* AngularJS
+* Bootstrap-sass 3.2.0
 
-* Database creation
+=== Usage
 
-* Database initialization
+git clone this file: 
 
-* How to run the test suite
+  git clone https://github.com/jsmit032/seasons-app.git
 
-* Services (job queues, cache servers, search engines, etc.)
+The data between the tags will be replaced by the partial contents. Partials are searched in
+"../partials" relative to the directory the script you run resides in. This can be overridden with
+commandline parameters. Partials always must have a .part.r?html ending and are evaluated as ERB during
+insertion.
 
-* Deployment instructions
+=== Syntax for HTML files (BELOW IS BEING EDITED)
 
-* ...
+==== Standard partials
+
+  <!-- [START:partial_name] -->Text<!-- [STOP:partial_name] -->
+
+==== Pass parameters to partials
+
+You can pass in parameters to partials in the format of key=value&key2=value2 (it's just a regular CGI
+query string and is parsed by CGI#parse). The partials wich are evaluated as ERB can access the variables
+through standard instance methods. The example below would create the instance variable @key.
+
+  <!-- [START:partial_name?key=value] -->Text<!-- [STOP:partial_name] -->
+
+=== Partials in subdirectories
+
+The partials path can have it's own directory structure. You can create tags with slashes in them
+to access partials in subdirectories.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Mockup commandline
+
+==== mockup convert [directory/file]
+
+Convert can be called with a single html file or a directory. If a directory is specified all .html files
+will be converted. 
+
+*Warning:* Convert will overwrite the file itself!
+
+Options:
+--partial_path:: the path where the partial files can be found (*.part.html), defaults to director/../partials
+--filter:: The filter to use when finding templates within directory, defaults to *.html 
+
+==== mockup serve [directory/file]
+
+Serve can be used during development as a simple webserver (Webrick/Mongrel). It also supports
+on-the-fly HTML validation. 
+
+You can also call ./script/server just above the HTML directory.
+
+Options:
+--port:: The port the server should listen on. Defaults to 9000
+--partial_path:: the path where the partial files can be found (*.part.html), defaults to director/../partials
+--validate:: Flag to set wether or not we should validate all html files (defaults to false)
+
+==== mockup generate [directory]
+
+Generate creates a directory structure in directory for use with new HTML mockups.
+
+==== mockup validate [directory/file]
+
+Validates all files within directory or just file with the W3C validator webservice. 
+
+Options:
+--show_valid:: Flag to print a line for each valid file too (defaults to false)
+--filter:: What files should be validated, defaults to [^_]*.html
+
+=== Copyright & license
+Copyright (c) 2011 Flurin Egger, DigitPaint, MIT Style License. (see MIT-LICENSE)
