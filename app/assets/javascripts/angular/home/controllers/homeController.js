@@ -1,16 +1,47 @@
 angular.module('SeasonsApp')
 
+// getWeather factory needs to work with user input AND geolocation
+// in this controller i want to be able to detect geolocation and run it through weatherService
+
 .controller('HomeController', ['$scope', 'weatherService', function($scope, weatherService) {
-  function fetchWeather(zip) {
-    weatherService.getWeather(zip).then(function(data){
-      $scope.place = data;
-    }); 
+
+  $scope.lat = "0";
+  $scope.lng = "0";
+  $scope.error = "0";
+
+  $scope.showPosition = function (position) {
+    $scope.lat = position.coords.latitude;
+    $scope.lng = position.coords.longitude;
+    $scope.coordinates = $scope.lat + "," + $scope.lng;
+    $scope.$apply();
+
+    $scope.fetchWeather($scope.coordinates);
   }
-  
-  fetchWeather('');
+
+  $scope.fetchWeather = function(coordinates) {
+    weatherService.getWeather(coordinates).then(function(data){
+      $scope.place = data;
+    });     
+  }
+
+  $scope.getLocation = function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition($scope.showPosition);
+    }
+    else {
+      $scope.error = "Geolocation is not supported by this browser.";
+      $scope.fetchWeather(90034);
+    }
+  }
+
+  $scope.getLocation();
+
+
 
   $scope.findWeather = function(zip) {
     $scope.place = '';
-    fetchWeather(zip);
+    $scope.fetchWeather(zip);
   };
+
+
 }]);

@@ -16,3 +16,4 @@ accessories = Category.create(name: 'accessories')
 outerwear = Category.create(name: 'outerwear')
 
 clothing = Clothing.create([{clothing_type: 'tshirt', category: tops}, {clothing_type: 'shorts', category: bottoms}, {clothing_type: 'jeans', category: bottoms}, {clothing_type: 'tank top', category: tops}, {clothing_type: 'sweater', category: outerwear}, {clothing_type: 'scarf', category: accessories}, {clothing_type: 'boots', category: shoes}])
+

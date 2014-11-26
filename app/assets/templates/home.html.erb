@@ -6,8 +6,6 @@
   <!-- weather -->
     <div class="col-xs-12 col-sm-6 col-md-6">
 
-
-      
       <h1>Current Weather</h1>
       <form>
         <input type="number" ng-model="zip">
@@ -15,12 +13,7 @@
       </form>
       <p ng-show="zip">Searching the forecasts for: {{zip}}</p>
       <div>
-        <h1>Forecast For: {{ place.response }}</h1>
-<!--         <h2>Current: {{ place.item.condition.text }} | {{ place.item.condition.temp }}&deg; <img src="http://l.yimg.com/a/i/us/we/52/{{place.item.condition.code}}.gif"/></h2>
-        <div ng-repeat="forecast in place.item.forecast">
-          <p><strong>{{ forecast.date }}</strong> – {{ forecast.text }}</p>
-          <p>H: {{ forecast.high }}&deg; | L: {{ forecast.low }}&deg;</p>
-        </div> -->
+        <h1>Forecast For: {{ place.current_observation.display_location.city }}</h1>
       </div>
 
 
