@@ -1,5 +1,10 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe UserToDestination, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe UserToDestination do
+
+	it {should respond_to(:user)}
+	it {should respond_to(:destination)}
 end
+
+
