@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe Clothing, :type => :model do
 
 	before :each do
-		@clothing = Clothing.new
+		@clothing = Clothing.new(clothing_type: "T-shirt")
 	end
 
 	# describes what should be happing when we create a new item of clothing
@@ -15,10 +15,6 @@ RSpec.describe Clothing, :type => :model do
 
 		it "should have a clothing_type" do
 			expect(@clothing.clothing_type).to eq("T-shirt")
-		end
-
-		it "should have a weather_type" do
-			expect(@clothing.weather_type).to eq("warm")
 		end
 
 	end
