@@ -1,5 +1,9 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Category, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+describe Category do
+	it {should respond_to(:clothing)}
+	
 end
+
