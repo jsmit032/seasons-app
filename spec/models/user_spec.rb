@@ -8,5 +8,7 @@ RSpec.describe User, :type => :model do
 
 
 	it { should respond_to(:name) }
+	it { should respond_to(:user_to_destination) }
+	it { should respond_to(:destination) }
 
 end

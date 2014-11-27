@@ -8,6 +8,8 @@ RSpec.describe Weather, :type => :model do
 
 
 	it { should respond_to(:weather_type) }
+	it { should respond_to(:weather_to_clothing) }
+	it { should respond_to(:clothing) }
 	
 	
 	

@@ -18,4 +18,7 @@ RSpec.describe Clothing, :type => :model do
 		end
 
 	end
+
+	it {should respond_to(:weather_to_clothing)}
+	it {should respond_to(:weather)}
 end
