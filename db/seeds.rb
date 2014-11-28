@@ -8,12 +8,14 @@
 # 	Weather.create([{destination_id: 1, hourly_forecast: 'Rainy with chance of meatballs'}, {destination_id: 2, hourly_forecast:'Sunny'}])
 Clothing.destroy_all
 Category.destroy_all
+
 # clothing categories
 tops = Category.create(name: 'tops')
 bottoms = Category.create(name: 'bottoms')
 shoes = Category.create(name: 'shoes')
 accessories = Category.create(name: 'accessories')
 outerwear = Category.create(name: 'outerwear')
+
 # weather categories
 chanceflurries = Category.create(name: 'Chance of Flurries')
 chancerain = Category.create(name: 'Chance of Rain')
@@ -42,6 +44,7 @@ thunderstrom = Category.create(name: 'Thunderstorm')
 unknown = Category.create(name: 'Unknown')
 overcast = Category.create(name: 'Overcast')
 scatterdclouds = Category.create(name: 'Scattered Clouds')
+
 # temperature categories
 freezing = Category.create(name: 'freezing')
 shivering = Category.create(name: 'shivering')
@@ -53,5 +56,61 @@ hot = Category.create(name: 'hot')
 dying = Category.create(name: 'dying')
 
 #clothing types
-clothing = Clothing.create([{clothing_type: 'tshirt', category: [tops, average]}, {clothing_type: 'shorts', category: [bottoms, warm]}, {clothing_type: 'jeans', category: [bottoms, chilly]}, {clothing_type: 'tank top', category: [tops, warm]}, {clothing_type: 'sweater', category: [outerwear, chilly]}, {clothing_type: 'scarf', category: [accessories, cold]}, {clothing_type: 'boots', category: [shoes, chilly]}, {clothing_type: 'sandals', category: [shoes, hot]}, {clothing_type: 'long-sleeve', category: [tops, cold]}, {clothing_type: 'turtleneck', category: [tops, shivering]}, {clothing_type: 'long johns', category: [tops, freezing]}, {clothing_type: 'three-forths sleeve', category: [tops, average]}, {clothing_type: 'undershirt', category: [tops, freezing]}, {clothing_type: 'sweat pants', category: [bottoms, chilly]}])
+tshirt = Clothing.create(clothing_type: 'tshirt')
+shorts = Clothing.create(clothing_type: 'shorts')
+jeans = Clothing.create(clothing_type: 'jeans')
+tank = Clothing.create(clothing_type: 'tank top')
+sweater = Clothing.create(clothing_type: 'sweater')
+scarf = Clothing.create(clothing_type: 'scarf')
+boots = Clothing.create(clothing_type: 'boots')
+sandals = Clothing.create(clothing_type: 'sandals')
+longsleeve = Clothing.create(clothing_type: 'long-sleeve') 
+turtleneck = Clothing.create(clothing_type: 'turtleneck')
+longjohns = Clothing.create(clothing_type: 'long johns')
+threeforths = Clothing.create(clothing_type: 'three-forths sleeve')
+undershirt = Clothing.create(clothing_type: 'undershirt') 
+sweatpants = Clothing.create(clothing_type: 'sweat pants')
 
+## add clothing to join table ##
+#tshirt 
+ClothingCategories.create(clothing_id: tshirt, category_id: tops)
+ClothingCategories.create(clothing_id: tshirt, category_id: average)
+#shorts 
+ClothingCategories.create(clothing_id: shorts, category_id: bottoms)
+ClothingCategories.create(clothing_id: shorts, category_id: warm)
+#jeans 
+ClothingCategories.create(clothing_id: jeans, category_id: bottoms)
+ClothingCategories.create(clothing_id: jeans, category_id: chilly)
+#tank
+ClothingCategories.create(clothing_id: tank, category_id: tops)
+ClothingCategories.create(clothing_id: tank, category_id: warm)
+#sweater
+ClothingCategories.create(clothing_id: sweater, category_id: outerwear)
+ClothingCategories.create(clothing_id: sweater, category_id: chilly)
+#scarf
+ClothingCategories.create(clothing_id: scarf, category_id: accessories)
+ClothingCategories.create(clothing_id: scarf, category_id: cold)
+#boots
+ClothingCategories.create(clothing_id: boots, category_id: shoes)
+ClothingCategories.create(clothing_id: boots, category_id: chilly)
+#sandals
+ClothingCategories.create(clothing_id: sandals, category_id: shoes)
+ClothingCategories.create(clothing_id: sandals, category_id: hot)
+#long-sleeve
+ClothingCategories.create(clothing_id: longsleeve, category_id: tops)
+ClothingCategories.create(clothing_id: longsleeve, category_id: cold)
+#turtleneck
+ClothingCategories.create(clothing_id: turtleneck, category_id: tops)
+ClothingCategories.create(clothing_id: turtleneck, category_id: shivering)
+#longjohns
+ClothingCategories.create(clothing_id: longjohns, category_id: tops)
+ClothingCategories.create(clothing_id: longjohns, category_id: freezing)
+#threeforths
+ClothingCategories.create(clothing_id: threeforths, category_id: tops)
+ClothingCategories.create(clothing_id: threeforths, category_id: average)
+#undershirt
+ClothingCategories.create(clothing_id: undershirt, category_id: tops)
+ClothingCategories.create(clothing_id: undershirt, category_id: freezing)
+#sweatpants
+ClothingCategories.create(clothing_id: longsleeve, category_id: bottoms)
+ClothingCategories.create(clothing_id: longsleeve, category_id: chilly)
