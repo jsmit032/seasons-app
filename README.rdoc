@@ -18,14 +18,14 @@ Season App requires the following dependencies
 
 === Usage
 
-git clone this file: 
+get this app working locally: 
 
   git clone https://github.com/jsmit032/seasons-app.git
+  bundle install
+  bundle exec rake db:create
+  bundle exec rake db:migrate
+  bundle exec rake db:seed
 
-The data between the tags will be replaced by the partial contents. Partials are searched in
-"../partials" relative to the directory the script you run resides in. This can be overridden with
-commandline parameters. Partials always must have a .part.r?html ending and are evaluated as ERB during
-insertion.
 
 === Syntax for HTML files (BELOW IS BEING EDITED)
 
