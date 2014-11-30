@@ -4,7 +4,7 @@ angular.module('SeasonsApp')
 .factory('weatherService', ['$http', '$q', function($http, $q) {
   function getWeather(zip) {
     var deferred = $q.defer();
-    $http.get('http://www.corsproxy.com/api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/' + zip + '.json')
+    $http.get('https://www.corsproxy.com/api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/' + zip + '.json')
       .success(function(data) {
         deferred.resolve(data);
       })
