@@ -5,38 +5,34 @@
 
   <!-- weather -->
     <div class="col-xs-12 col-sm-6 col-md-6">
-
-      <h1>Current Weather</h1>
-      <form>
-        <input type="number" ng-model="zip">
-        <input type="submit" value="Search" ng-click="findWeather(zip)">
-      </form>
-      <p ng-show="zip">Searching the forecasts for: {{zip}}</p>
-      <div>
-        <h1>Forecast For: {{ place.current_observation.display_location.city }}</h1>
-      </div>
-
-
-
+      <!-- current weather conditions -->
+      <h1>It's currenty {{place.current_observation.weather}} in {{place.current_observation.display_location.city}}</h1>
+      <p>{{place.current_observation.temp_f}} // HI: {{place.forecast.simpleforecast.forecastday[0].high.fahrenheit}} // LOW: {{place.forecast.simpleforecast.forecastday[0].low.fahrenheit}}</p>
+      
     </div>
   
 
   <!-- clothing -->
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="row ">
-        <div class="col-xs-12 col-sm-12 col-md-12 right-side-half" id="dayclothing">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla condimentum ipsum vel porttitor. Nunc consectetur eu est posuere interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas nec nisi ut sem sodales venenatis. Aliquam erat volutpat. Suspendisse tellus velit, pharetra in dapibus non, volutpat aliquet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ut nibh imperdiet dui ornare efficitur vitae a lacus. Mauris et neque libero. Donec sed porta urna. Pellentesque hendrerit, nulla ac vehicula molestie, ante libero eleifend ipsum, ac tempus ante urna eu dolor.
-          </p>
+    <div class="col-xs-12 col-sm-6 col-md-6 right-column">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="dayclothing">
+          <h3>Today you'll need</h3>
+          <!-- code that links to clothing -->
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 right-side-half" id="nightclothing">
-          <p>
-            Aenean auctor dui nibh, a aliquet est rhoncus consectetur. Sed imperdiet lorem vitae eros maximus sollicitudin. Suspendisse sed sapien aliquet, ultricies ligula eu, lobortis mauris. Nam in dictum augue, ut mattis nisi. Donec fermentum, ex at laoreet dictum, ligula enim dictum dui, in condimentum orci turpis vel orci. Aliquam erat volutpat. Vivamus at ligula vulputate, molestie est vel, finibus eros. Integer congue pulvinar sapien rhoncus suscipit. Integer auctor lectus vestibulum, dictum purus eget, auctor massa. Vestibulum id pretium lacus. Aenean lacinia tincidunt orci vitae venenatis. Nam in ultricies dui. Praesent suscipit, purus sed hendrerit dictum, nibh est vulputate magna, quis vulputate orci diam at est. Nam ultricies luctus ante et porta. Suspendisse mattis velit in diam tempus laoreet.
-          </p>
+        <div class="col-xs-12 col-sm-12 col-md-12" id="nightclothing">
+          <h3>Don't forget about these later tonight</h3>
+          <!-- code that links to clothing -->
         </div>
       </div>
     </div>
+  </div>
 
+  <!--  <div ng-include ="'footer.html.erb'"></div> -->
+  <div class="footer">
+    <form>
+      <input type="submit" value="Search" ng-click="findWeather(zip)">
+      <input type="text" placeholder="where to?" ng-model="zip">
+    </form>
   </div>
 </div>

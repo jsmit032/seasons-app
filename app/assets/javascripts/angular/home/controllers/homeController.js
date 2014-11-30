@@ -37,7 +37,6 @@ angular.module('SeasonsApp')
   $scope.getLocation();
 
 
-
   $scope.findWeather = function(zip) {
     $scope.place = '';
     $scope.fetchWeather(zip);
