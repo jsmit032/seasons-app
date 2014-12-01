@@ -26,8 +26,9 @@ html, body, .ng-scope {
 }
 
 .row {
-  border: 1px solid #000;
+  // border: 1px solid #000;
   height: 100%;
+  bottom: 200px;
 }
 
 .right-column {
@@ -36,20 +37,14 @@ html, body, .ng-scope {
 
 #dayclothing {
   height: 50%;
+  background: red;
 }
 
 #nightclothing {
   height: 50%;
+  background: blue;
 }
 
-.footer {
-  width: 100%;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #ee5;
-}
 
 h3 {
   text-align: center;
@@ -62,6 +57,15 @@ h3 {
 
 
 // search bar
+// .search-bar {
+//   width: 100%;
+//   height: 80px;
+//   position: absolute;
+//   // bottom: 0;
+//   left: 0;
+//   background: #ee5;
+//   z-index: 1;
+// }
 #wrap {
   margin: 50px 0px;
   display: inline-block;

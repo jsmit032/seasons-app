@@ -1,5 +1,19 @@
+<!--   <div class="search-bar">
+    <form>
+      <input type="submit" value="Search" ng-click="findWeather(zip)">
+      <input type="text" placeholder="where to?" ng-model="zip">
+    </form>
+  </div> -->
+
+
 <div class="container-fluid">
-  
+
+  <nav class="navbar navbar-default" role="navigation">
+    <form>
+      <input type="submit" value="Search" ng-click="findWeather(zip)">
+      <input type="text" placeholder="where to?" ng-model="zip">
+    </form>
+  </nav>
 
   <div class="row">
 
@@ -26,13 +40,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!--  <div ng-include ="'footer.html.erb'"></div> -->
-  <div class="footer">
-    <form>
-      <input type="submit" value="Search" ng-click="findWeather(zip)">
-      <input type="text" placeholder="where to?" ng-model="zip">
-    </form>
   </div>
 </div>
