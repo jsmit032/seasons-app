@@ -220,6 +220,7 @@ ClothingCategory.create(clothing: rainboots, category: chanceOfrain)
 ClothingCategory.create(clothing: rainboots, category: rain)
 #barefoot
 ClothingCategory.create(clothing: barefoot, category: shoes)
+ClothingCategory.create(clothing: barefoot)
 #slippers
 ClothingCategory.create(clothing: slippers, category: shoes)
 #loafers
