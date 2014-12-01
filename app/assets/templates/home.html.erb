@@ -14,9 +14,20 @@
     </nav>
 
       <!-- current weather conditions -->
-      <h1>It's currently {{place.current_observation.weather}} in {{place.current_observation.display_location.city}}</h1>
-      <p>{{place.current_observation.temp_f}} // HI: {{place.forecast.simpleforecast.forecastday[0].high.fahrenheit}} // LOW: {{place.forecast.simpleforecast.forecastday[0].low.fahrenheit}}</p>
-      
+<!--       <h1>It's currently<br><span>{{place.current_observation.temp_f}} &amp; {{place.current_observation.weather}}</span><br>in {{place.current_observation.display_location.city}}</h1>
+
+      <div id="conditions">
+      <p>HI: {{place.forecast.simpleforecast.forecastday[0].high.fahrenheit}} // LOW: {{place.forecast.simpleforecast.forecastday[0].low.fahrenheit}}<br>wind: {{place.current_observation.wind_string}} <br>rain: {{place.forecast.simpleforecast.forecastday[0].pop}}<br>snow: {{place.forecast.simpleforecast.forecastday[0].snow_day.in}}</p>
+      </div>
+       -->
+
+       <!-- dummy text for styling -->
+      <h1>It's currently<br><span>61.8 &amp; clear</span><br>in Los Angeles</h1>
+
+      <div id="conditions">
+      <p>HI: 75 // LOW: 44<br>wind: calm <br>rain: 60%<br>snow: 0 in</p>
+      </div>
+
     </div>
   
 
