@@ -16,12 +16,15 @@
 
 @import 'bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, body, .ng-scope {
-  background: #DDD;
+  background: #fff;
   height: 100%;
   width: 100%;
+  margin: 0px;
+  padding: 0;
   // font-size: 15px;
 }
 
@@ -35,14 +38,24 @@ html, body, .ng-scope {
   height: 100%;
 }
 
+#weather {
+  padding: 0;
+  margin: 0;
+}
+
+#weather h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
 #dayclothing {
   height: 50%;
-  background: red;
+  background: rgba(228, 241, 254, 1);
 }
 
 #nightclothing {
   height: 50%;
-  background: blue;
+  background: rgba(34, 49, 63, 1.0);
 }
 
 
@@ -51,8 +64,11 @@ h3 {
 }
 
 .navbar {
-  background: transparent;
+  background: rgba(210, 77, 78, 1.0);
   border: none;
+  height: 80px;
+  margin: 0;
+  padding: 0;
 }
 
 
