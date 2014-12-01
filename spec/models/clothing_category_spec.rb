@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe ClothingCategory, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe ClothingCategory do
+	
+  it {should respond_to(:category)}
+  it {should respond_to(:clothing)}
+
 end
