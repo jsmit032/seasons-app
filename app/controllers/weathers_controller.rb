@@ -1,7 +1,7 @@
 class WeathersController < ApplicationController
 
   # pull in database information
-  # need to compare what category 
+  # what table do we need to pull???
   def index
     weathers = Weather.all
     render json: weathers, status: 200
