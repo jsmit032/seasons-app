@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 class SuggestionsController < ApplicationController
-=======
-class suggestionsController < ApplicationController
->>>>>>> master
 
   def index
     suggestions = Clothing.all
