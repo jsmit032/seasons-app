@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  scope 'api', defaults: {format: :json} do
-    resources :suggestions, only: [:index, :create, :update, :destroy]
-  end
-
   get 'receivezip' => 'weathers#receiveZip'
 
   root 'application#index'

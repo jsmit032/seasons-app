@@ -32,9 +32,6 @@ class WeathersController < ApplicationController
   def receiveZip
     #expecting zip code param, this means just a regular form
     #to post from the page
-    
-
-
 
     #httpParty to get weather data from api
     if params[:lat]
@@ -45,12 +42,20 @@ class WeathersController < ApplicationController
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
     @condition = data.parsed_response["current_observation"]["weather"]
     @city = data.parsed_response["current_observation"]["display_location"]["city"]
+    # @temphi = data.parsed_response forecast.simpleforecast.forecastday[0].high.fahrenheit
+    # @templo = data.parsed_response forecast.simpleforecast.forecastday[0].low.fahrenheit
+    # @rain = data.parsed_response forecast.simpleforecast.forecastday[0].pop
+    # @snow = data.parsed_response orecast.simpleforecast.forecastday[0].snow_day.in
+    # @wind = data.parsed_response current_observation.wind_string
+
     data = {temp: @temp, condition: @condition, city: @city}
 
     render json: data, status: 200
-    # @results = JSON.parse(uri.body)
 
     #take that data and input it into decision engine
+
+
+
 
     #use the categories returned from decision engine to search db
     #for matching articles of clothing
@@ -66,8 +71,9 @@ class WeathersController < ApplicationController
   # # snow => if >0 return true
   # # p.o.p => if >30% return true
 
-  def clothing_suggustion
+  def clothing_suggestion
  	# use parsed info from api to return clothing suggustions from database
+
   end
 
 end
