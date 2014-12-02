@@ -12,7 +12,10 @@ angular.module('SeasonsApp')
   $scope.showPosition = function (position) {
     $scope.lat = position.coords.latitude;
     $scope.lng = position.coords.longitude;
-    $scope.coordinates = $scope.lat + "," + $scope.lng;
+    $scope.coordinates = {
+      lat: $scope.lat,
+      lng: $scope.lng
+    };
     $scope.$apply();
 
     $scope.fetchWeather($scope.coordinates);

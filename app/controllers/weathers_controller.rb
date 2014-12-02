@@ -1,4 +1,5 @@
 class WeathersController < ApplicationController
+  respond_to :html, :json
 
   # pull in database information
   # what table do we need to pull???
@@ -8,15 +9,51 @@ class WeathersController < ApplicationController
   end
 
   def assign_TempCategory
-  	case weathers.current_observation.temp_f.to_i
-  	when -80..32 return "freezing"
-  	when 33..40 return "shivering"
-  	when 41..50 return "cold"
-  	when 51..60 return "chilly"
-  	when 61..70 return "average"
-  	when 71..80 return "warm"
-  	when 81..90 return "hot"
-  	when 91..134 return "dying"
+  	case temp
+  	when -80..32 
+     "freezing"
+  	when 33..40 
+     "shivering"
+  	when 41..50 
+     "cold"
+  	when 51..60 
+     "chilly"
+  	when 61..70 
+     "average"
+  	when 71..80 
+     "warm"
+  	when 81..90 
+     "hot"
+  	when 91..134 
+     "dying"
+    end
+  end
+
+  def receiveZip
+    #expecting zip code param, this means just a regular form
+    #to post from the page
+    
+
+
+
+    #httpParty to get weather data from api
+    if params[:lat]
+      data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:lat].to_s + "," + params[:lng].to_s + ".json")
+    else
+      data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:zip].to_s + ".json")
+    end
+    @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
+    @condition = data.parsed_response["current_observation"]["weather"]
+    respond_with @temp
+    # @results = JSON.parse(uri.body)
+
+    #take that data and input it into decision engine
+
+    #use the categories returned from decision engine to search db
+    #for matching articles of clothing
+
+    #return those matches or recommendations
+
   end
 
   # retrieve data from api: 

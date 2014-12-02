@@ -7,10 +7,16 @@
     <div class="col-xs-12 col-sm-6 col-md-6" id="weather">
       
     <nav class="navbar navbar-default" role="navigation">
+
       <form>
         <input type="submit" value="Search" ng-click="findWeather(zip)">
         <input type="text" placeholder="where to?" ng-model="zip">
       </form>
+
+      <%#=form_for @suggestion do |f| %>
+
+      <%# end %>
+
     </nav>
 
       <!-- current weather conditions -->
@@ -18,11 +24,11 @@
 
       <div id="conditions">
       <p>HI: {{place.forecast.simpleforecast.forecastday[0].high.fahrenheit}} // LOW: {{place.forecast.simpleforecast.forecastday[0].low.fahrenheit}}<br>wind: {{place.current_observation.wind_string}} <br>rain: {{place.forecast.simpleforecast.forecastday[0].pop}}<br>snow: {{place.forecast.simpleforecast.forecastday[0].snow_day.in}}</p>
-      </div>
-       -->
+      </div> -->
+      
 
        <!-- dummy text for styling -->
-      <h1>It's currently<br><span>61.8 &amp; clear</span><br>in Los Angeles</h1>
+      <h1>It's currently<br><span><%= @temp %> &amp; clear</span><br>in Los Angeles</h1>
 
       <div id="conditions">
       <p>HI: 75 // LOW: 44<br>wind: calm <br>rain: 60%<br>snow: 0 in</p>
