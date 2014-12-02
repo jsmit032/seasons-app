@@ -23,7 +23,10 @@ angular.module('SeasonsApp')
 
   $scope.fetchWeather = function(coordinates) {
     weatherService.getWeather(coordinates).then(function(data){
+      // console.log("hi");
       $scope.place = data;
+      // console.log(data);
+      // console.log($scope.place);
     });     
   }
 

@@ -44,7 +44,10 @@ class WeathersController < ApplicationController
     end
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
     @condition = data.parsed_response["current_observation"]["weather"]
-    respond_with @temp
+    @city = data.parsed_response["current_observation"]["display_location"]["city"]
+    data = {temp: @temp, condition: @condition, city: @city}
+
+    render json: data, status: 200
     # @results = JSON.parse(uri.body)
 
     #take that data and input it into decision engine

@@ -9,8 +9,8 @@
     <nav class="navbar navbar-default" role="navigation">
 
       <form>
-        <input type="submit" value="Search" ng-click="findWeather(zip)">
-        <input type="text" placeholder="where to?" ng-model="zip">
+        <input type="submit" value="Search" ng-click="findWeather(coordinates)">
+        <input type="text" placeholder="where to?" ng-model="coordinates">
       </form>
 
       <%#=form_for @suggestion do |f| %>
@@ -28,7 +28,7 @@
       
 
        <!-- dummy text for styling -->
-      <h1>It's currently<br><span><%= @temp %> &amp; clear</span><br>in Los Angeles</h1>
+      <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
 
       <div id="conditions">
       <p>HI: 75 // LOW: 44<br>wind: calm <br>rain: 60%<br>snow: 0 in</p>

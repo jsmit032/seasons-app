@@ -5,15 +5,20 @@ angular.module('SeasonsApp')
   function getWeather(coordinates) {
     var deferred = $q.defer();
     $http.get('/receivezip?lat='+coordinates.lat+'&lng='+coordinates.lng)
+
       .success(function(data) {
-        // deferred.resolve(data);
+        deferred.resolve(data);
         console.log(data);
       })
       .error(function(err) {
         console.log('Error retrieving data');
         deferred.reject(err);
       });
+
+    
     return deferred.promise;
+
+
   }
   return {
     getWeather: getWeather
