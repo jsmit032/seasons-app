@@ -1,4 +1,4 @@
-class suggestionsController < ApplicationController
+class SuggestionsController < ApplicationController
 
   def index
     suggestions = Clothing.all
