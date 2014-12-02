@@ -4,7 +4,7 @@ angular.module('SeasonsApp')
 .factory('weatherService', ['$http', '$q', function($http, $q) {
   function getWeather(coordinates) {
     var deferred = $q.defer();
-    $http.get('/receivezip?lat='+coordinates.lat+'&lng='+coordinates.lng)
+    $http.get('/receivezip?zip='+coordinates)
 
       .success(function(data) {
         deferred.resolve(data);
