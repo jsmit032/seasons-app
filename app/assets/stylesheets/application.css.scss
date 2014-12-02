@@ -15,8 +15,8 @@
  */
 
 @import 'bootstrap';
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:100);
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, body, .ng-scope {
@@ -74,11 +74,22 @@ html, body, .ng-scope {
 #nightclothing {
   height: 50%;
   background: rgba(34, 49, 63, 1.0);
+  color: #fff;
 }
 
-
-h3 {
+.right-column {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.right-column h3 {
+  font-size: 35px;
+}
+
+.right-column p {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 300%;
 }
 
 .navbar {

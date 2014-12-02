@@ -8,19 +8,33 @@ angular.module('SeasonsApp')
 
       .success(function(data) {
         deferred.resolve(data);
-        console.log(data);
+        // console.log(data);
       })
       .error(function(err) {
         console.log('Error retrieving data');
         deferred.reject(err);
       });
-
-    
     return deferred.promise;
-
-
   }
+
+  function getClothing(condition) {
+    var deferredClothing = $q.defer();
+    $http.get('/getclothing?weather=' + condition)
+
+      .success(function(dataClothing) {
+        deferredClothing.resolve(dataClothing);
+        // console.log(dataClothing);
+      })
+      .error(function(err) {
+        console.log('Error retrieving data');
+        deferredClothing.reject(err);
+      });
+    return deferredClothing.promise;
+  }
+
   return {
-    getWeather: getWeather
+    getWeather: getWeather,
+    getClothing: getClothing
   };
+  
 }]);
