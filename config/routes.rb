@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'receivezip' => 'weathers#receiveZip'
-
+  get 'getclothing' => 'weathers#getClothing'
   root 'application#index'
   get '*path' => 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.

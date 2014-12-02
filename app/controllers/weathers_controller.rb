@@ -64,6 +64,15 @@ class WeathersController < ApplicationController
 
   end
 
+  def getClothing
+    if params[:weather]
+      @categoryRec = Category.find_by name: params[:weather].to_s
+      items = @categoryRec.clothings
+
+      render json: items, status: 200
+    end
+  end
+
   # retrieve data from api: 
   # # temperature => pass through assign_condition
   # # condition => get returned string condition
