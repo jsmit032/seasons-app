@@ -22,7 +22,7 @@
       <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
 
       <div id="conditions">
-        <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}in</p>
+        <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}"</p>
       </div>
 
     </div>
@@ -33,20 +33,27 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" id="dayclothing">
           <h3>now</h3>
+          <hr>
           <!-- code that links to clothing -->
 <!--             <div ng-repeat="item in weather.article">
               {{ item }}
             </div> -->
            
-              <p>{{weather.article[0].clothing_type}}</p>
               <p>{{weather.article[1].clothing_type}}</p>
-              <p>{{weather.article[2].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>              
+              <p>{{weather.article[4].clothing_type}}</p>
+              <p>{{weather.article[5].clothing_type}}</p>
+              <p>{{weather.article[6].clothing_type}}</p>
             
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12" id="nightclothing">
           <h3>later </h3>
+          <hr>
           <!-- code that links to clothing -->
+              <p>{{weather.article[1].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>
+              <p>{{weather.article[3].clothing_type}}</p>
         </div>
       </div>
     </div>

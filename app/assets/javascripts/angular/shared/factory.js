@@ -8,7 +8,7 @@ angular.module('SeasonsApp')
 
       .success(function(data) {
         deferred.resolve(data);
-        // console.log(data);
+        console.log(data);
       })
       .error(function(err) {
         console.log('Error retrieving data');
@@ -23,7 +23,7 @@ angular.module('SeasonsApp')
 
       .success(function(dataClothing) {
         deferredClothing.resolve(dataClothing);
-        // console.log(dataClothing);
+        console.log(dataClothing);
       })
       .error(function(err) {
         console.log('Error retrieving data');
