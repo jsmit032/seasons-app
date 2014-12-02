@@ -7,25 +7,22 @@
     <div class="col-xs-12 col-sm-6 col-md-6" id="weather">
       
     <nav class="navbar navbar-default" role="navigation">
+
       <form>
-        <input type="submit" value="Search" ng-click="findWeather(zip)">
-        <input type="text" placeholder="where to?" ng-model="zip">
+        <input type="submit" value="Search" ng-click="findWeather(coordinates)">
+        <input type="text" placeholder="where to?" ng-model="coordinates">
       </form>
+
+      <%#=form_for @suggestion do |f| %>
+
+      <%# end %>
+
     </nav>
-
-      <!-- current weather conditions -->
-<!--       <h1>It's currently<br><span>{{place.current_observation.temp_f}} &amp; {{place.current_observation.weather}}</span><br>in {{place.current_observation.display_location.city}}</h1>
-
-      <div id="conditions">
-      <p>HI: {{place.forecast.simpleforecast.forecastday[0].high.fahrenheit}} // LOW: {{place.forecast.simpleforecast.forecastday[0].low.fahrenheit}}<br>wind: {{place.current_observation.wind_string}} <br>rain: {{place.forecast.simpleforecast.forecastday[0].pop}}<br>snow: {{place.forecast.simpleforecast.forecastday[0].snow_day.in}}</p>
-      </div>
-       -->
-
-       <!-- dummy text for styling -->
-      <h1>It's currently<br><span>61.8 &amp; clear</span><br>in Los Angeles</h1>
+      
+      <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
 
       <div id="conditions">
-      <p>HI: 75 // LOW: 44<br>wind: calm <br>rain: 60%<br>snow: 0 in</p>
+        <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}"</p>
       </div>
 
     </div>
@@ -35,13 +32,28 @@
     <div class="col-xs-12 col-sm-6 col-md-6 right-column">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" id="dayclothing">
-          <h3>Today you'll need</h3>
+          <h3>now</h3>
+          <hr>
           <!-- code that links to clothing -->
+<!--             <div ng-repeat="item in weather.article">
+              {{ item }}
+            </div> -->
+           
+              <p>{{weather.article[1].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>              
+              <p>{{weather.article[4].clothing_type}}</p>
+              <p>{{weather.article[5].clothing_type}}</p>
+              <p>{{weather.article[6].clothing_type}}</p>
+            
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12" id="nightclothing">
-          <h3>Don't forget about these later tonight</h3>
+          <h3>later </h3>
+          <hr>
           <!-- code that links to clothing -->
+              <p>{{weather.article[1].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>
+              <p>{{weather.article[3].clothing_type}}</p>
         </div>
       </div>
     </div>
