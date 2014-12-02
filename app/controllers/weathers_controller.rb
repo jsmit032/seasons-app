@@ -1,6 +1,18 @@
 class WeathersController < ApplicationController
   respond_to :html, :json
 
+  # def clothing
+  #   connection = ActiveRecord::Base.connection
+  #   connection.execute("SELECT name, clothing_type FROM clothings, clothing_categories, categories WHERE clothings.id = clothing_categories.clothing_id AND categories.id = clothing_categories.category_id AND name='cold';")
+  # end
+
+  def getClothing
+   if params[:weather]
+     data = [{name: 'shirt'}, {name: 'pants'}, {name: 'socks'}]
+     render json: data, status: 200
+   end
+ end
+
   # pull in database information
   # what table do we need to pull???
   def index
