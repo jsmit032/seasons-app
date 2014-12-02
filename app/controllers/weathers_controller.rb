@@ -9,7 +9,7 @@ class WeathersController < ApplicationController
   end
 
   def assign_TempCategory
-  	case temp
+  	case @temp.to_i
   	when -80..32 
      "freezing"
   	when 33..40 
@@ -73,15 +73,8 @@ class WeathersController < ApplicationController
     end
   end
 
-  # retrieve data from api: 
-  # # temperature => pass through assign_condition
-  # # condition => get returned string condition
-  # # wind_mph => return true if >5mph
-  # # snow => if >0 return true
-  # # p.o.p => if >30% return true
-
   def clothing_suggestion
- 	# use parsed info from api to return clothing suggustions from database
+ 	# use parsed info from api to return clothing suggestions from database
 
   end
 

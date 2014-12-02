@@ -34,6 +34,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12" id="dayclothing">
           <h3>Today you'll need</h3>
           <!-- code that links to clothing -->
+            <div ng-repeat="article in items">
+              <p>{{ article.name }}</p>
+            </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12" id="nightclothing">
