@@ -6,28 +6,39 @@
   <div class="row">
 
   <!-- weather & search bar -->
+<<<<<<< HEAD
+    <div class="col-xs-11 col-sm-11 col-md-11">
+    <nav class="navbar navbar-default" role="navigation">
+=======
     <div class="col-xs-11 col-sm-11 col-md-11" id="weather">
       
 <!--      <nav class="navbar navbar-default" role="navigation">
+>>>>>>> master
 
       <form>
         <input type="submit" value="Search" ng-click="findWeather(coordinates)">
         <input type="text" placeholder="where to?" ng-model="coordinates">
       </form>
 
+<<<<<<< HEAD
+    </nav>
+
+=======
     </nav> -->
       
-      <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
-
+>>>>>>> master
       <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
 
       <div id="conditions">
         <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}"</p>
       </div>
+<<<<<<< HEAD
 
       
       
 
+=======
+>>>>>>> master
 
     </div>
   </div>

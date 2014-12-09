@@ -33,11 +33,8 @@ ActiveRecord::Schema.define(version: 20141127035102) do
   add_index "clothing_categories", ["clothing_id"], name: "index_clothing_categories_on_clothing_id", using: :btree
 
   create_table "clothings", force: true do |t|
-    t.string  "clothing_type"
-    t.integer "category_id"
+    t.string "clothing_type"
   end
-
-  add_index "clothings", ["category_id"], name: "index_clothings_on_category_id", using: :btree
 
   create_table "destinations", force: true do |t|
     t.string   "city"

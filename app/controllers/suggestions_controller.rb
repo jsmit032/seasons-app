@@ -1,7 +1,7 @@
 class SuggestionsController < ApplicationController
 
   def index
-    suggestions = Clothing.all
+    @suggestions = Clothing.all
     render json: suggestions, status: 200
   end
 
