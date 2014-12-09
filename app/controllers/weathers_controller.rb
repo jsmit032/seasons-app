@@ -18,6 +18,8 @@ class WeathersController < ApplicationController
     else
       data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:zip].to_s + ".json")
     end
+
+    # info needed for day clothing
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
     @condition = data.parsed_response["current_observation"]["weather"]
     @city = data.parsed_response["current_observation"]["display_location"]["city"]
@@ -27,22 +29,19 @@ class WeathersController < ApplicationController
     @snow = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["snow_day"]["in"]
     @wind = data.parsed_response["current_observation"]["wind_string"]
 
-    data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind }
+    # info needed for night clothing
+    # @nighttemp == @templo
+    @nightrain = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["qpf_night"]["in"]
+    @nightsnow = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["snow_night"]["in"]
+    @nightwind = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["avewind"]["mph"]
+
+    data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, nightrain: @nightrain, nightsnow: @nightsnow, nightwind: @nightwind }
 
     render json: data, status: 200
 
-    #take that data and input it into decision engine
-
-
-
-
-    #use the categories returned from decision engine to search db
-    #for matching articles of clothing
-
-    #return those matches or recommendations
-
   end
 
+  # returns clothing for weather and temperature (case sensitive based on what was written in database)
   def getClothing
     if params[:weather]
       items = Category.find_by name: params[:weather].to_s

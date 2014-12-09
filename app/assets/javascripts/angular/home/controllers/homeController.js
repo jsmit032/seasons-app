@@ -30,6 +30,7 @@ angular.module('SeasonsApp')
       $scope.temp = data.temp;
       $scope.condition = "";
 
+      // switch statement for temperature (freezing, shivering, cold, chilly, average, warm, hot, dying) and weather (rain, snow, wind, sunny, cloudy)
       switch(true) {
         case ($scope.temp < 33):
           $scope.condition = "freezing";
@@ -64,6 +65,8 @@ angular.module('SeasonsApp')
           $scope.fetchClothing($scope.condition);
           break;
       }
+
+
     });     
   }
 
