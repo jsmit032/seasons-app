@@ -1,0 +1,38 @@
+<style>
+.rotate {
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */.
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	height: 150px;
+}
+</style>
+
+<%= form_tag :clothing_categories do |f| %>
+
+<table>
+	<tr>
+		<th></th>
+		<% Clothing.all.each do |c| %>
+			<th class="rotate"><%= c.clothing_type %></th>
+		<% end %>
+	</tr>
+	<% Category.all.each do |w| %>
+		<tr>
+			<th><%= w.name %></th>
+			<% Clothing.all.each do |c| %>
+			<td><input type="checkbox" name="cb<%= w.id %>_<%= c.id %>"<%= ClothingCategory.where(clothing_id: c.id, category_id: w.id).count >= 1 ? " checked" : "" %> /></td>
+			<% end %>
+		</tr>
+	<% end %>
+</table>
+
+<%=   submit_tag "submit" %>
+
+<% end %>
