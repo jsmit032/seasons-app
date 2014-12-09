@@ -26,7 +26,7 @@ chancesnow = Category.create(name: 'Chance of Snow')
 chancetstroms = Category.create(name: 'Chance of Thunderstorms')
 chancetstrom = Category.create(name: 'Chance of a Thunderstorm')
 clear = Category.create(name: 'Clear')
-cloudy = Category.create(name: 'Cloudy')
+# cloudy = Category.create(name: 'Cloudy') redone below
 flurries = Category.create(name: 'Flurries')
 fog = Category.create(name: 'Fog')
 haze = Category.create(name: 'Haze')
@@ -35,16 +35,24 @@ mostlysunny = Category.create(name: 'Mostly Sunny')
 partlycloudy = Category.create(name: 'Partly Cloudy')
 partlysunny = Category.create(name: 'Partly Sunny')
 freezingrain = Category.create(name: 'Freezing Rain')
-rain = Category.create(name: 'Rain')
+# rain = Category.create(name: 'Rain') redone below
 sleet = Category.create(name: 'Sleet')
-snow = Category.create(name: 'Snow')
-sunny = Category.create(name: 'Sunny')
+# snow = Category.create(name: 'Snow') redone below
+# sunny = Category.create(name: 'Sunny') redone below
 thunderstroms = Category.create(name: 'Thunderstorms')
 thunderstrom = Category.create(name: 'Thunderstorm')
-unknown = Category.create(name: 'Unknown')
+#unknown = Category.create(name: 'Unknown') redone below
 overcast = Category.create(name: 'Overcast')
 scatterdclouds = Category.create(name: 'Scattered Clouds')
+#windy = Category.create(name: 'Windy') redone below
+
+#Condition 6 Categories
+rain = Category.create(name: 'Rain')
+snow = Category.create(name: 'Snow')
 windy = Category.create(name: 'Windy')
+sunny = Category.create(name: 'Sunny')
+cloudy = Category.create(name: 'Cloudy')
+unknown = Category.create(name: 'Unknown')
 
 # temperature categories
 freezing = Category.create(name: 'freezing')
