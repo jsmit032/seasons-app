@@ -19,7 +19,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-html, body, .ng-scope {
+html, body {
   background: #fff;
   height: 100%;
   width: 100%;
@@ -27,16 +27,31 @@ html, body, .ng-scope {
   padding: 0;
   // font-size: 15px;
 }
-
-.row {
-  // border: 1px solid #000;
-  height: 100%;
-  bottom: 200px;
+.clear {
+  background-color: #99BFFF;
+  background-image: url('http://i.imgur.com/rge3cIQ.jpg');
+  background-size: cover;
+}
+.partly-cloudy {
+  background-color: #ABC7C7;
+  background-image: url('http://i.imgur.com/19jMUhl.jpg');
+  background-size: cover;
+}
+.light-rain {
+  background-color: #1A73B2;
+  background-image: url('http://i.imgur.com/tg43uPr.jpg');
+  background-size: cover;
 }
 
-.right-column {
-  height: 100%;
-}
+// .row {
+//   // border: 1px solid #000;
+//   height: 100%;
+//   bottom: 200px;
+// }
+
+// .right-column {
+//   height: 100%;
+// }
 
 #weather {
   padding: 0;
@@ -66,31 +81,31 @@ html, body, .ng-scope {
   text-transform: uppercase;
 }
 
-#dayclothing {
-  height: 50%;
-  background: rgba(228, 241, 254, 1);
-}
+// #dayclothing {
+//   height: 50%;
+//   background: rgba(228, 241, 254, 1);
+// }
 
-#nightclothing {
-  height: 50%;
-  background: rgba(34, 49, 63, 1.0);
-  color: #fff;
-}
+// #nightclothing {
+//   height: 50%;
+//   background: rgba(34, 49, 63, 1.0);
+//   color: #fff;
+// }
 
-.right-column {
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-}
+// .right-column {
+//   text-align: center;
+//   font-family: 'Oswald', sans-serif;
+// }
 
-.right-column h3 {
-  font-size: 35px;
-}
+// .right-column h3 {
+//   font-size: 35px;
+// }
 
-.right-column p {
-  font-size: 30px;
-  font-weight: 300;
-  line-height: 150%;
-}
+// .right-column p {
+//   font-size: 30px;
+//   font-weight: 300;
+//   line-height: 150%;
+// }
 
 .navbar {
   background: rgba(210, 77, 78, 1.0);
