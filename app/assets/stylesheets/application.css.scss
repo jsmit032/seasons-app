@@ -24,6 +24,50 @@ html, #weather {
   padding: 0;
 }
 
+#weather {
+  padding: 0;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  color: rgba(34, 49, 63, 1.0);
+}
+
+#weather h1 {
+  padding-top: 150px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 150%;
+  font-size: 45px;
+}
+
+#weather span {
+  font-weight: 700;
+  text-transform: lowercase;
+  font-size: 65px;
+  line-height: 150%;
+}
+
+#conditions {
+  padding-top: 100px;
+  text-transform: uppercase;
+}
+
+// .clear {
+//   background-color: #99BFFF;
+//   background-image: url('http://i.imgur.com/rge3cIQ.jpg');
+//   background-size: cover;
+// }
+// .partly-cloudy {
+//   background-color: #ABC7C7;
+//   background-image: url('http://i.imgur.com/19jMUhl.jpg');
+//   background-size: cover;
+// }
+// .light-rain {
+//   background-color: #1A73B2;
+//   background-image: url('http://i.imgur.com/tg43uPr.jpg');
+//   background-size: cover;
+// }
+
 *,
 *:after,
 *::before {
@@ -31,11 +75,9 @@ html, #weather {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-body  {
+body {
   background: #1abc9c;
 }
-
 .container {
   padding: 80px;
 }
@@ -265,83 +307,6 @@ body  {
   color: #1abc9c;
 }
 
-
-
-///////////////////////// MAIN WEATHER PAGE IN THIRDS WITH QUARTER DAY/NIGHT SECTIONS (PROJ 3) /////////////////////////
-// html, body, .ng-scope {
-//   background: #fff;
-//   height: 100%;
-//   width: 100%;
-//   margin: 0px;
-//   padding: 0;
-//   // font-size: 15px;
-// }
-
-// .row {
-//   // border: 1px solid #000;
-//   height: 100%;
-//   bottom: 200px;
-// }
-
-// .right-column {
-//   height: 100%;
-// }
-
-// #weather {
-//   padding: 0;
-//   margin: 0;
-//   font-family: 'Oswald', sans-serif;
-//   text-align: center;
-//   color: rgba(34, 49, 63, 1.0);
-// }
-
-// #weather h1 {
-//   padding-top: 150px;
-//   font-weight: 400;
-//   letter-spacing: 3px;
-//   line-height: 150%;
-//   font-size: 45px;
-// }
-
-// #weather span {
-//   font-weight: 700;
-//   text-transform: lowercase;
-//   font-size: 65px;
-//   line-height: 150%;
-// }
-
-// #conditions {
-//   padding-top: 100px;
-//   text-transform: uppercase;
-// }
-
-// #dayclothing {
-//   height: 50%;
-//   background: rgba(228, 241, 254, 1);
-// }
-
-// #nightclothing {
-//   height: 50%;
-//   background: rgba(34, 49, 63, 1.0);
-//   color: #fff;
-// }
-
-// .right-column {
-//   text-align: center;
-//   font-family: 'Oswald', sans-serif;
-// }
-
-// .right-column h3 {
-//   font-size: 35px;
-// }
-
-// .right-column p {
-//   font-size: 30px;
-//   font-weight: 300;
-//   line-height: 150%;
-// }
-
-
 ///////////////////////// SEARCH BAR /////////////////////////
 
 .navbar {
@@ -423,41 +388,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   opacity: 0.8;
 }
-
-
-///////////////////////// FORCED BURGER NAV MENU /////////////////////////
-// .navbar-header {
-//   float: none;
-// }
-// .navbar-toggle {
-//   display: block;
-// }
-// .navbar-collapse {
-//   border-top: 1px solid transparent;
-//   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-// }
-// .navbar-collapse.collapse {
-//   display: none!important;
-// }
-// .navbar-nav {
-//   float: none!important;
-//   margin: 7.5px -15px;
-// }
-// .navbar-nav>li {
-//   float: none;
-//   text-align: right;
-// }
-// .navbar-nav>li>a {
-//   padding-top: 10px;
-//   padding-bottom: 10px;
-//   text-align: right;
-// }
-// .navbar-collapse.collapse.in { 
-//   display: block!important;
-// }
-// .collapsing {
-//   overflow: hidden!important;
-// }
 
 
 ///////////////////////// ABOUT PAGE /////////////////////////
