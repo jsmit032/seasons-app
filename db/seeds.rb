@@ -113,18 +113,23 @@ sunglasses = Clothing.create(clothing_type: 'sunglasses')
 #tshirt 
 ClothingCategory.create(clothing: tshirt, category: tops)
 ClothingCategory.create(clothing: tshirt, category: average)
+ClothingCategory.create(clothing: tshirt, category: cloudy)
 #shorts 
 ClothingCategory.create(clothing: shorts, category: bottoms)
 ClothingCategory.create(clothing: shorts, category: warm)
+ClothingCategory.create(clothing: shorts, category: sunny)
 #jeans 
 ClothingCategory.create(clothing: jeans, category: bottoms)
 ClothingCategory.create(clothing: jeans, category: chilly)
+ClothingCategory.create(clothing: jeans, category: cloudy)
 #tank
 ClothingCategory.create(clothing: tank, category: tops)
 ClothingCategory.create(clothing: tank, category: warm)
+ClothingCategory.create(clothing: tank, category: sunny)
 #sweater
 ClothingCategory.create(clothing: sweater, category: outerwear)
 ClothingCategory.create(clothing: sweater, category: chilly)
+ClothingCategory.create(clothing: sweater, category: cloudy)
 #scarf
 ClothingCategory.create(clothing: scarf, category: accessories)
 ClothingCategory.create(clothing: scarf, category: cold)
@@ -132,21 +137,27 @@ ClothingCategory.create(clothing: scarf, category: snow)
 #boots
 ClothingCategory.create(clothing: boots, category: shoes)
 ClothingCategory.create(clothing: boots, category: chilly)
+ClothingCategory.create(clothing: boots, category: cloudy)
 #sandals
 ClothingCategory.create(clothing: sandals, category: shoes)
 ClothingCategory.create(clothing: sandals, category: hot)
+ClothingCategory.create(clothing: sandals, category: sunny)
 #long-sleeve
 ClothingCategory.create(clothing: longsleeve, category: tops)
 ClothingCategory.create(clothing: longsleeve, category: cold)
+ClothingCategory.create(clothing: longsleeve, category: windy)
 #turtleneck
 ClothingCategory.create(clothing: turtleneck, category: tops)
 ClothingCategory.create(clothing: turtleneck, category: shivering)
+ClothingCategory.create(clothing: turtleneck, category: snow)
 #longjohns
 ClothingCategory.create(clothing: longjohns, category: tops)
 ClothingCategory.create(clothing: longjohns, category: freezing)
+ClothingCategory.create(clothing: longjohns, category: snow)
 #threeforths
 ClothingCategory.create(clothing: threeforths, category: tops)
 ClothingCategory.create(clothing: threeforths, category: average)
+ClothingCategory.create(clothing: threeforths, category: cloudy)
 #undershirt
 ClothingCategory.create(clothing: undershirt, category: tops)
 ClothingCategory.create(clothing: undershirt, category: freezing)
@@ -159,6 +170,7 @@ ClothingCategory.create(clothing: longsleeve, category: freezing)
 #skipants
 ClothingCategory.create(clothing: skipants, category: bottoms)
 ClothingCategory.create(clothing: skipants, category: freezing)
+ClothingCategory.create(clothing: skipants, category: snow)
 #cargo
 ClothingCategory.create(clothing: cargo, category: bottoms)
 ClothingCategory.create(clothing: cargo, category: average)
@@ -166,29 +178,28 @@ ClothingCategory.create(clothing: cargo, category: average)
 ClothingCategory.create(clothing: capris, category: bottoms)
 ClothingCategory.create(clothing: capris, category: warm)
 #umbrella
-ClothingCategory.create(clothing: umbrella, category: accessories)
-ClothingCategory.create(clothing: umbrella, category: chancerain)
-ClothingCategory.create(clothing: umbrella, category: chanceOfrain)
 ClothingCategory.create(clothing: umbrella, category: rain)
 #gloves
 ClothingCategory.create(clothing: gloves, category: accessories)
 ClothingCategory.create(clothing: gloves, category: cold)
+ClothingCategory.create(clothing: gloves, category: snow)
 #beanie
 ClothingCategory.create(clothing: beanie, category: accessories)
 ClothingCategory.create(clothing: beanie, category: chilly)
 #skihat
 ClothingCategory.create(clothing: skihat, category: accessories)
 ClothingCategory.create(clothing: skihat, category: shivering)
+ClothingCategory.create(clothing: skihat, category: windy)
 #cossak
 ClothingCategory.create(clothing: cossak, category: accessories)
 ClothingCategory.create(clothing: cossak, category: freezing)
+ClothingCategory.create(clothing: cossak, category: snow)
 #bomberhat
 ClothingCategory.create(clothing: bomberhat, category: accessories)
 ClothingCategory.create(clothing: bomberhat, category: freezing)
 #ballcap
 ClothingCategory.create(clothing: ballcap, category: accessories)
 ClothingCategory.create(clothing: ballcap, category: sunny)
-ClothingCategory.create(clothing: ballcap, category: mostlysunny)
 #leather jacket
 ClothingCategory.create(clothing: leatherjacket, category: outerwear)
 ClothingCategory.create(clothing: leatherjacket, category: cold)
@@ -196,8 +207,6 @@ ClothingCategory.create(clothing: leatherjacket, category: cold)
 ClothingCategory.create(clothing: raincoat, category: outerwear)
 ClothingCategory.create(clothing: raincoat, category: chilly)
 ClothingCategory.create(clothing: raincoat, category: rain)
-ClothingCategory.create(clothing: raincoat, category: chancerain)
-ClothingCategory.create(clothing: raincoat, category: chanceOfrain)
 #jacket
 ClothingCategory.create(clothing: jacket, category: outerwear)
 ClothingCategory.create(clothing: jacket, category: cold)
@@ -219,20 +228,23 @@ ClothingCategory.create(clothing: hoodie, category: outerwear)
 ClothingCategory.create(clothing: tennisshoes, category: shoes)
 #boat shoes
 ClothingCategory.create(clothing: boatshoes, category: shoes)
+ClothingCategory.create(clothing: boatshoes, category: warm)
+ClothingCategory.create(clothing: boatshoes, category: sunny)
 #dress shoes
 ClothingCategory.create(clothing: dressshoes, category: shoes)
 #rain boots
 ClothingCategory.create(clothing: rainboots, category: shoes)
-ClothingCategory.create(clothing: rainboots, category: chancerain)
-ClothingCategory.create(clothing: rainboots, category: chanceOfrain)
 ClothingCategory.create(clothing: rainboots, category: rain)
 #barefoot
 ClothingCategory.create(clothing: barefoot, category: shoes)
-ClothingCategory.create(clothing: barefoot)
+ClothingCategory.create(clothing: barefoot, category: dying)
+ClothingCategory.create(clothing: barefoot, category: sunny)
 #slippers
 ClothingCategory.create(clothing: slippers, category: shoes)
+ClothingCategory.create(clothing: slippers, category: snow)
 #loafers
 ClothingCategory.create(clothing: loafers, category: shoes)
+ClothingCategory.create(clothing: loafers, category: windy)
 #swimsuit
 ClothingCategory.create(clothing: swimsuit, category: bottoms)
 ClothingCategory.create(clothing: swimsuit, category: tops)
@@ -240,4 +252,3 @@ ClothingCategory.create(clothing: swimsuit, category: dying)
 #sunglasses
 ClothingCategory.create(clothing: sunglasses, category: accessories)
 ClothingCategory.create(clothing: sunglasses, category: sunny)
-ClothingCategory.create(clothing: sunglasses, category: mostlysunny)
