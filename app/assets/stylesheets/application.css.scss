@@ -307,10 +307,11 @@ body {
   color: #1abc9c;
 }
 
+
 ///////////////////////// SEARCH BAR /////////////////////////
 
 .navbar {
-  background: rgba(210, 77, 78, 1.0);
+  background: rgba(210, 77, 78, 0);
   border: none;
   height: 80px;
   margin: 0;
@@ -510,8 +511,6 @@ opacity:0.9;
 .resume-heading .social-btns i.fa{
   margin-left:-5px;
 }
-
-
 
 @media (max-width: 992px) {
   .resume-heading .social-btn-holder{
