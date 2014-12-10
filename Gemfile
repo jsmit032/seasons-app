@@ -14,6 +14,7 @@ group :test do
 end
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'normalize-rails', '~> 3.0.1'
 
 gem 'bower-rails'
 

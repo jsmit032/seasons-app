@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require normalize-rails
  *= require_tree .
  *= require_self
  */
@@ -52,21 +53,21 @@ html, #weather {
   text-transform: uppercase;
 }
 
-// .clear {
-//   background-color: #99BFFF;
-//   background-image: url('http://i.imgur.com/rge3cIQ.jpg');
-//   background-size: cover;
-// }
-// .partly-cloudy {
-//   background-color: #ABC7C7;
-//   background-image: url('http://i.imgur.com/19jMUhl.jpg');
-//   background-size: cover;
-// }
-// .light-rain {
-//   background-color: #1A73B2;
-//   background-image: url('http://i.imgur.com/tg43uPr.jpg');
-//   background-size: cover;
-// }
+#clear {
+  background-color: #99BFFF;
+  background-image: url('http://i.imgur.com/rge3cIQ.jpg');
+  background-size: cover;
+}
+.partly-cloudy {
+  background-color: #ABC7C7;
+  background-image: url('http://i.imgur.com/19jMUhl.jpg');
+  background-size: cover;
+}
+.light-rain {
+  background-color: #1A73B2;
+  background-image: url('http://i.imgur.com/tg43uPr.jpg');
+  background-size: cover;
+}
 
 *,
 *:after,
