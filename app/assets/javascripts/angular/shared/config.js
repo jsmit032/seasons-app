@@ -11,6 +11,18 @@ angular.module('SeasonsApp')
       url: '/',
       templateUrl: 'home.html',
       controller: 'HomeController'
+    })    
+
+    .state('day', {
+      url: '/day',
+      templateUrl: 'day.html',
+      controller: 'HomeController'
+    })    
+
+    .state('night', {
+      url: '/night',
+      templateUrl: 'night.html',
+      controller: 'HomeController'
     })
 
     .state('about', {
