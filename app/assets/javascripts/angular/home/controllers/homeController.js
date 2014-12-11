@@ -12,16 +12,10 @@ angular.module('SeasonsApp')
   $scope.showPosition = function (position) {
     $scope.lat = position.coords.latitude;
     $scope.lng = position.coords.longitude;
-    // $scope.coordinates = {
-    //   lat: $scope.lat,
-    //   lng: $scope.lng
-    // };
     $scope.coordinates = $scope.lat + "," + $scope.lng;
     $scope.$apply();
 
     $scope.fetchWeather($scope.coordinates);
-    // $scope.getCondition($scope.coordinates);
-
   }
 
   $scope.fetchWeather = function(coordinates) {
@@ -110,69 +104,6 @@ angular.module('SeasonsApp')
       $scope.fetchClothing($scope.condition, $scope.bkcondition);
     });     
   }
-
-  // get weather endpoint from Wunderground API and change it into board category
-  // $scope.getCondition = function(coordinates) {
-  //   weatherService.getWeather(coordinates).then(function(data){
-  //     // console.log("hi");
-  //     $scope.place = data;
-  //     $scope.weather = angular.lowercase(data.condition);
-  //     $scope.bkcondition = "";
-
-  //     switch($scope.weather) {
-  //       case "rain": 
-  //       case "heavy rain": 
-  //       case "light rain": 
-  //       case "thunderstrom": 
-  //       case "thunderstroms": 
-  //       case "chance of rain": 
-  //       case "chance rain": 
-  //       case "chance of thunderstroms": 
-  //       case "chance of freezing rain": 
-  //       case "freezing rain":
-  //         $scope.bkcondition = "rain";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //         break;
-  //       case "chance of flurries": 
-  //       case "flurries": 
-  //       case "chance of snow":
-  //       case "light snow": 
-  //       case "snow":
-  //       case "heavy snow": 
-  //       case "chance of flurries": 
-  //       case "flurries": 
-  //       case "sleet":
-  //         $scope.bkcondition = "snow";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //         break;
-  //       case "wind": 
-  //       case "windy":
-  //         $scope.bkcondition = "windy";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //         break;        
-  //       case "mostly sunny": 
-  //       case "sunny": 
-  //       case "clear": 
-  //       case "partly cloudy": 
-  //       case "partly sunny":
-  //         $scope.bkcondition = "sunny";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //         break;        
-  //       case "fog": 
-  //       case "haze": 
-  //       case "cloudy": 
-  //       case "mostly cloudy": 
-  //       case "scattered clouds": 
-  //       case "overcast":
-  //         $scope.bkcondition = "cloudy";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //         break;        
-  //       default:
-  //         $scope.bkcondition = "unknown";
-  //         $scope.fetchClothing($scope.bkcondition);
-  //     }
-  //   });     
-  // }
 
 // grabs clothing from the api that was called based on location
   $scope.fetchClothing = function(condition, bkcondition) {
