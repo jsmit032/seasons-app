@@ -92,8 +92,10 @@ angular.module('SeasonsApp')
           break;
         case "chance of flurries": 
         case "flurries": 
-        case "chance of snow": 
-        case "snow": 
+        case "chance of snow":
+        case "light snow": 
+        case "snow":
+        case "heavy snow" 
         case "chance of flurries": 
         case "flurries": 
         case "sleet":
@@ -132,6 +134,7 @@ angular.module('SeasonsApp')
   $scope.fetchClothing = function(condition) {
     weatherService.getClothing($scope.condition).then(function(dataClothing) {
       $scope.weather = dataClothing;
+      $scope.condition = dataClothing;
     });
   }
 

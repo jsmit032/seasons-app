@@ -22,6 +22,14 @@ class WeathersController < ApplicationController
     @condition = data.parsed_response["current_observation"]["weather"]
     # Variable for css styling
     @bckgrdCondition = data.parsed_response["current_observation"]["weather"].parameterize
+    case @bckgrdCondition
+    when "A", "B"
+      puts 'You pretty smart!'
+    when "C", "D"
+      puts 'You pretty dumb!!'
+    else
+      puts "You can't even use a computer!"
+    end
 
     @city = data.parsed_response["current_observation"]["display_location"]["city"]
     @temphi = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"]
@@ -37,17 +45,16 @@ class WeathersController < ApplicationController
   end
 
   def getClothing
-    if params[:weather]
-      items = Category.find_by name: params[:weather].to_s
-      @article = items.clothings
-
-      items = {article: @article}
-
-      # @categoryRec = Category.find_by name: params[:weather].to_s
-      # items = @categoryRec.clothings
-
-      render json: items, status: 200
+    # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
+    items = []
+    params.keys.each do |k|
+      if k[0..7] == "category"
+        results = Category.where(name: params[k]).first
+        items += results.clothings if results
+      end
     end
+
+    render json: items, status: 200
   end
 
 end
