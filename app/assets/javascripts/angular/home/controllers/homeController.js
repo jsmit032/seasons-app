@@ -95,7 +95,7 @@ angular.module('SeasonsApp')
         case "chance of snow":
         case "light snow": 
         case "snow":
-        case "heavy snow" 
+        case "heavy snow": 
         case "chance of flurries": 
         case "flurries": 
         case "sleet":
