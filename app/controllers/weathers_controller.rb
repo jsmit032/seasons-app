@@ -12,7 +12,7 @@ class WeathersController < ApplicationController
     #expecting zip code param, this means just a regular form
     #to post from the page
 
-    #httpParty to get weather data from api
+    # httpParty to get weather data from api
     if params[:lat]
       data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:lat].to_s + "," + params[:lng].to_s + ".json")
     else
@@ -33,16 +33,6 @@ class WeathersController < ApplicationController
     data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, bckgrdCondition: @bckgrdCondition }
 
     render json: data, status: 200
-
-    #take that data and input it into decision engine
-
-
-
-
-    #use the categories returned from decision engine to search db
-    #for matching articles of clothing
-
-    #return those matches or recommendations
 
   end
 
