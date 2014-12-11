@@ -16,43 +16,13 @@ shoes = Category.create(name: 'shoes')
 accessories = Category.create(name: 'accessories')
 outerwear = Category.create(name: 'outerwear')
 
-# weather categories
-chanceflurries = Category.create(name: 'Chance of Flurries')
-chancerain = Category.create(name: 'Chance of Rain')
-chanceOfrain = Category.create(name: 'Chance Rain')
-chancefreezingrain = Category.create(name: 'Chance of Freezing Rain')
-chancesleet = Category.create(name: 'Chance of Sleet')
-chancesnow = Category.create(name: 'Chance of Snow')
-chancetstroms = Category.create(name: 'Chance of Thunderstorms')
-chancetstrom = Category.create(name: 'Chance of a Thunderstorm')
-clear = Category.create(name: 'Clear')
-# cloudy = Category.create(name: 'Cloudy') redone below
-flurries = Category.create(name: 'Flurries')
-fog = Category.create(name: 'Fog')
-haze = Category.create(name: 'Haze')
-mostlycloudy = Category.create(name: 'Mostly Cloudy')
-mostlysunny = Category.create(name: 'Mostly Sunny')
-partlycloudy = Category.create(name: 'Partly Cloudy')
-partlysunny = Category.create(name: 'Partly Sunny')
-freezingrain = Category.create(name: 'Freezing Rain')
-# rain = Category.create(name: 'Rain') redone below
-sleet = Category.create(name: 'Sleet')
-# snow = Category.create(name: 'Snow') redone below
-# sunny = Category.create(name: 'Sunny') redone below
-thunderstroms = Category.create(name: 'Thunderstorms')
-thunderstrom = Category.create(name: 'Thunderstorm')
-#unknown = Category.create(name: 'Unknown') redone below
-overcast = Category.create(name: 'Overcast')
-scatterdclouds = Category.create(name: 'Scattered Clouds')
-#windy = Category.create(name: 'Windy') redone below
-
 #Condition 6 Categories
-rain = Category.create(name: 'Rain')
-snow = Category.create(name: 'Snow')
-windy = Category.create(name: 'Windy')
-sunny = Category.create(name: 'Sunny')
-cloudy = Category.create(name: 'Cloudy')
-unknown = Category.create(name: 'Unknown')
+rain = Category.create(name: 'rain')
+snow = Category.create(name: 'snow')
+windy = Category.create(name: 'windy')
+sunny = Category.create(name: 'sunny')
+cloudy = Category.create(name: 'cloudy')
+unknown = Category.create(name: 'unknown')
 
 # temperature categories
 freezing = Category.create(name: 'freezing')
@@ -178,6 +148,7 @@ ClothingCategory.create(clothing: cargo, category: average)
 ClothingCategory.create(clothing: capris, category: bottoms)
 ClothingCategory.create(clothing: capris, category: warm)
 #umbrella
+ClothingCategory.create(clothing: umbrella, category: accessories)
 ClothingCategory.create(clothing: umbrella, category: rain)
 #gloves
 ClothingCategory.create(clothing: gloves, category: accessories)

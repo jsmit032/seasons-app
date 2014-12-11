@@ -4,7 +4,7 @@ angular.module('SeasonsApp')
 
   $locationProvider.html5Mode({enabled:true, requireBase:true});
 
-  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('home', {
