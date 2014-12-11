@@ -19,16 +19,22 @@ class WeathersController < ApplicationController
       data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:zip].to_s + ".json")
     end
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
-    @condition = data.parsed_response["current_observation"]["weather"]
+    @condition = data.parsed_response["current_observation"]["weather"].downcase!
     # Variable for css styling
-    @bckgrdCondition = data.parsed_response["current_observation"]["weather"].parameterize
+    @bckgrdCondition = data.parsed_response["current_observation"]["weather"]
     case @bckgrdCondition
-    when "A", "B"
-      puts 'You pretty smart!'
-    when "C", "D"
-      puts 'You pretty dumb!!'
+    when "chance of flurries","flurries","chance of snow","light snow","snow","heavy snow" ,"chance of flurries","flurries","sleet"
+      @bckgrdCondition = "snow"
+    when "rain","heavy rain","light rain","thunderstrom","thunderstroms","chance of rain","chance rain","chance of thunderstroms","chance of freezing rain","freezing rain"
+      @bckgrdCondition = "rain"
+    when "mostly sunny","sunny","clear","partly cloudy","partly sunny"
+      @bckgrdCondition = "sunny"
+    when "fog","haze","cloudy","mostly cloudy","scattered clouds","overcast"
+      @bckgrdCondition = "cloudy"
+    when "wind","windy"
+      @bckgrdCondition = "windy"
     else
-      puts "You can't even use a computer!"
+      @bckgrdCondition = "unknown"
     end
 
     @city = data.parsed_response["current_observation"]["display_location"]["city"]
