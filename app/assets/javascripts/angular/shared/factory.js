@@ -17,10 +17,15 @@ angular.module('SeasonsApp')
     return deferred.promise;
   }
 
-  function getClothing(condition) {
+  function getClothing(condition, bkcondition) {
     var deferredClothing = $q.defer();
-    $http.get('/getclothing?weather=' + condition)
 
+    // check for multiple params and count the number of params?
+    // create the get url based on the # of params
+    // create url that accepts condition and bkcondition
+    // 
+    
+    $http.get('/getclothing?category1=' + condition + '&category2=' + bkcondition)
       .success(function(dataClothing) {
         deferredClothing.resolve(dataClothing);
         console.log(dataClothing);
@@ -29,6 +34,8 @@ angular.module('SeasonsApp')
         console.log('Error retrieving data');
         deferredClothing.reject(err);
       });
+
+
     return deferredClothing.promise;
   }
 
