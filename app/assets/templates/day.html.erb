@@ -1,10 +1,24 @@
-     <nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
 
-      <form>
-        <input type="submit" value="Search" ng-click="findWeather(coordinates)">
-        <input type="text" placeholder="where to?" ng-model="coordinates">
-      </form>
+     	<nav class="navbar navbar-default" role="navigation">
 
-    </nav>
+     		<form>
+		     	<input type="submit" value="Search" ng-click="findWeather(coordinates)">
+		     	<input type="text" placeholder="where to?" ng-model="coordinates">
+      	</form>
 
-    day time
+   	</nav>
+
+
+   	<div class="col-xs-11 col-sm-11 col-md-11">
+
+   		<section ng-repeat="oneArticle in weather track by $index">
+
+    			<h3>{{oneArticle.clothing_type}}</h3>
+
+    		</section>
+
+    	</div>
+
+
+</div>
