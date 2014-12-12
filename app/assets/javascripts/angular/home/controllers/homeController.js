@@ -12,16 +12,10 @@ angular.module('SeasonsApp')
   $scope.showPosition = function (position) {
     $scope.lat = position.coords.latitude;
     $scope.lng = position.coords.longitude;
-    // $scope.coordinates = {
-    //   lat: $scope.lat,
-    //   lng: $scope.lng
-    // };
     $scope.coordinates = $scope.lat + "," + $scope.lng;
     $scope.$apply();
 
     $scope.fetchWeather($scope.coordinates);
-    $scope.getCondition($scope.coordinates);
-
   }
 
   $scope.fetchWeather = function(coordinates) {
@@ -29,52 +23,36 @@ angular.module('SeasonsApp')
       // console.log("hi");
       $scope.place = data;
       $scope.temp = data.temp;
+      $scope.weather = angular.lowercase(data.condition);
+      $scope.bkcondition = "";
       $scope.condition = "";
 
       switch(true) {
         case ($scope.temp < 33):
           $scope.condition = "freezing";
-          $scope.fetchClothing($scope.condition);
           break;
         case ($scope.temp < 41):
           $scope.condition = "shivering";
-          $scope.fetchClothing($scope.condition);
           break;
         case ($scope.temp < 51):
           $scope.condition = "cold";
-          $scope.fetchClothing($scope.condition);
           break;        
         case ($scope.temp < 61):
           $scope.condition = "chilly";
-          $scope.fetchClothing($scope.condition);
           break;        
         case ($scope.temp < 71):
           $scope.condition = "average";
-          $scope.fetchClothing($scope.condition);
           break;        
         case ($scope.temp < 81):
           $scope.condition = "warm";
-          $scope.fetchClothing($scope.condition);
           break;        
         case ($scope.temp < 91):
           $scope.condition = "hot";
-          $scope.fetchClothing($scope.condition);
           break;          
         case ($scope.temp > 92):
           $scope.condition = "dying";
-          $scope.fetchClothing($scope.condition);
           break;
       }
-    });     
-  }
-
-  // get weather endpoint from Wunderground API and change it into board category
-  $scope.getCondition = function(coordinates) {
-    weatherService.getWeather(coordinates).then(function(data){
-      // console.log("hi");
-      $scope.place = data;
-      $scope.weather = angular.lowercase(data.condition);
-      $scope.bkcondition = "";
 
       switch($scope.weather) {
         case "rain": 
@@ -88,7 +66,6 @@ angular.module('SeasonsApp')
         case "chance of freezing rain": 
         case "freezing rain":
           $scope.bkcondition = "rain";
-          $scope.fetchClothing($scope.bkcondition);
           break;
         case "chance of flurries": 
         case "flurries": 
@@ -100,12 +77,10 @@ angular.module('SeasonsApp')
         case "flurries": 
         case "sleet":
           $scope.bkcondition = "snow";
-          $scope.fetchClothing($scope.bkcondition);
           break;
         case "wind": 
         case "windy":
           $scope.bkcondition = "windy";
-          $scope.fetchClothing($scope.bkcondition);
           break;        
         case "mostly sunny": 
         case "sunny": 
@@ -113,7 +88,6 @@ angular.module('SeasonsApp')
         case "partly cloudy": 
         case "partly sunny":
           $scope.bkcondition = "sunny";
-          $scope.fetchClothing($scope.bkcondition);
           break;        
         case "fog": 
         case "haze": 
@@ -122,19 +96,20 @@ angular.module('SeasonsApp')
         case "scattered clouds": 
         case "overcast":
           $scope.bkcondition = "cloudy";
-          $scope.fetchClothing($scope.bkcondition);
           break;        
         default:
           $scope.bkcondition = "unknown";
-          $scope.fetchClothing($scope.bkcondition);
       }
+
+      $scope.fetchClothing($scope.condition, $scope.bkcondition);
     });     
   }
 
-  $scope.fetchClothing = function(condition) {
-    weatherService.getClothing($scope.condition).then(function(dataClothing) {
+// grabs clothing from the api that was called based on location
+  $scope.fetchClothing = function(condition, bkcondition) {
+    weatherService.getClothing($scope.condition, $scope.bkcondition).then(function(dataClothing) {
       $scope.weather = dataClothing;
-      $scope.condition = dataClothing;
+      // $scope.condition = dataClothing;
     });
   }
 
