@@ -72,10 +72,26 @@ html, #weather {
   background-color: #1A73B2;
   background-image: url('http://i.imgur.com/Os5fhdZ.jpg');
   background-size: cover;
+  color: #85A3E0;
 }
 #cloudy {
-  background-color: grey;
+  background-color: #8C8C8C;
   background-image: url('http://i.imgur.com/AcQHLCZ.jpg');
+  background-size: cover;
+}
+#windy {
+  background-color: #85A3E0;
+  background-image: url('http://i.imgur.com/7pBJA5H.jpg');
+  background-size: cover;
+}
+#sunny {
+  background-color: #E6CC80;
+  background-image: url('http://i.imgur.com/w3VORlt.jpg');
+  background-size: cover;
+}
+#unknown {
+  background-color: #1abc9c;
+  background-image: url('http://i.imgur.com/l8KiqpN.jpg');
   background-size: cover;
 }
 
@@ -87,7 +103,7 @@ html, #weather {
     box-sizing: border-box;
 }
 body {
-  background: #1abc9c;
+  background: #ffffff;
 }
 .container {
   padding: 80px;
