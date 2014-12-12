@@ -19,9 +19,9 @@ class WeathersController < ApplicationController
       data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:zip].to_s + ".json")
     end
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
-    @condition = data.parsed_response["current_observation"]["weather"].downcase!
+    @condition = data.parsed_response["current_observation"]["weather"]
     # Variable for css styling
-    @bckgrdCondition = data.parsed_response["current_observation"]["weather"]
+    @bckgrdCondition = data.parsed_response["current_observation"]["weather"].downcase!
     case @bckgrdCondition
     when "chance of flurries","flurries","chance of snow","light snow","snow","heavy snow" ,"chance of flurries","flurries","sleet"
       @bckgrdCondition = "snow"
