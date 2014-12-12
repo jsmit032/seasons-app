@@ -18,6 +18,8 @@ class WeathersController < ApplicationController
     else
       data = HTTParty.get("https://api.wunderground.com/api/2f0b44146ceab5a4/forecast/conditions/q/" + params[:zip].to_s + ".json")
     end
+
+    # info needed for day clothing
     @temp =  data.parsed_response["current_observation"]["temp_f"].to_i
     @condition = data.parsed_response["current_observation"]["weather"]
     # Variable for css styling
@@ -45,11 +47,19 @@ class WeathersController < ApplicationController
     @wind = data.parsed_response["current_observation"]["wind_string"]
 
     data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, bckgrdCondition: @bckgrdCondition }
+    # info needed for night clothing
+    # @nighttemp == @templo
+    @nightrain = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["qpf_night"]["in"]
+    @nightsnow = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["snow_night"]["in"]
+    @nightwind = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["avewind"]["mph"]
+
+    data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, nightrain: @nightrain, nightsnow: @nightsnow, nightwind: @nightwind }
 
     render json: data, status: 200
 
   end
 
+  # returns clothing for weather and temperature (case sensitive based on what was written in database)
   def getClothing
     # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
     items = []

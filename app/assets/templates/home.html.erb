@@ -32,6 +32,39 @@
       <p> {{weather[9].clothing_type}}</p>
 
     </div>
+
+  <!-- clothing -->
+    <div class="col-xs-12 col-sm-6 col-md-6 right-column">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="dayclothing">
+          <h3>now</h3>
+          <hr>
+          <!-- code that links to clothing -->
+<!--             <div ng-repeat="item in weather.article">
+              {{ item }}
+            </div> -->
+           
+              <p>{{weather.article[1].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>              
+              <p>{{weather.article[4].clothing_type}}</p>
+              <p>{{weather.article[5].clothing_type}}</p>
+              <p>{{weather.article[6].clothing_type}}</p>
+              <p>{{weather.article[7].clothing_type}}</p>
+              <p>{{weather.article[8].clothing_type}}</p>
+              <p>{{weather.article[9].clothing_type}}</p>
+            
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12" id="nightclothing">
+          <h3>later </h3>
+          <hr>
+          <!-- code that links to clothing -->
+              <p>{{weather.article[1].clothing_type}}</p>
+              <p>{{weather.article[2].clothing_type}}</p>
+              <p>{{weather.article[3].clothing_type}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
