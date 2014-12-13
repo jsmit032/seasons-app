@@ -20,38 +20,95 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-html, #weather {
+html, .container-fluid {
   margin: 0;
   padding: 0;
 }
 
-#weather {
-  padding: 0;
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
-  text-align: center;
-  color: rgba(34, 49, 63, 1.0);
-}
-
-#weather h1 {
-  padding-top: 150px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  line-height: 150%;
-  font-size: 45px;
-}
-
-#weather span {
-  font-weight: 700;
-  text-transform: lowercase;
-  font-size: 65px;
-  line-height: 150%;
+.hero-banner {
+  padding: 18% 0;
+  position: relative;
+  // z-index:-1;
 }
 
 #conditions {
-  padding-top: 100px;
-  text-transform: uppercase;
+  text-align: center;
 }
+
+#apparel-tab {
+  width: 150px;
+  height: 80px;
+  line-height: 40px;
+  background-color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: -40px;
+  margin: 0 45%;
+}
+
+.bounce:hover {
+  position:fixed;
+  bottom:-40px;
+  -webkit-animation:bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:-40px; }
+  25%, 75% { bottom:-35px; }
+  50%      { bottom:-32px; }
+  100%     { bottom:-40px;}
+}
+
+#apparel {
+  padding: 8% 0;
+}
+
+#footer {
+  background-color: rgba(108, 122, 137, 1);
+  margin: 0;
+  padding: 8% 0;
+  height: 250px;
+  z-index: -1;
+  text-align: center;
+}
+
+#footer-content span {
+  font-size: 35px;
+}
+
+// #weather {
+//   padding: 0;
+//   margin: 0;
+//   font-family: 'Oswald', sans-serif;
+//   text-align: center;
+//   color: rgba(34, 49, 63, 1.0);
+// }
+
+// #weather h1 {
+//   padding-top: 150px;
+//   font-weight: 400;
+//   letter-spacing: 3px;
+//   line-height: 150%;
+//   font-size: 45px;
+// }
+
+// #weather span {
+//   font-weight: 700;
+//   text-transform: lowercase;
+//   font-size: 65px;
+//   line-height: 150%;
+// }
+
+// #conditions {
+//   padding-top: 100px;
+//   text-transform: uppercase;
+// }
+
+
+
+
+
+
 
 // #clear {
 //   background-color: #99BFFF;
@@ -78,6 +135,7 @@ html, #weather {
   background-color: #8C8C8C;
   background-image: url('http://i.imgur.com/AcQHLCZ.jpg');
   background-size: cover;
+  background-position: center bottom;
 }
 #windy {
   background-color: #85A3E0;
@@ -110,6 +168,7 @@ body {
 }
 
 .bt-menu {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;

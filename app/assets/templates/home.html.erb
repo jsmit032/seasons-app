@@ -1,37 +1,62 @@
-<div class="container-fluid" id="{{place.bckgrdCondition}}"> 
+<!-- <div class="container-fluid" id="{{place.bckgrdCondition}}">  -->
+<div class="container-fluid" > 
 
-  <div class="row">
+  <div class="hero-banner" id="cloudy">
 
   <!-- weather & search bar -->
     <div class="col-xs-11 col-sm-11 col-md-11" id="weather">
       
-     <nav class="navbar navbar-default" role="navigation">
-
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <form>
         <input type="submit" value="Search" ng-click="findWeather(coordinates)">
         <input type="text" placeholder="where to?" ng-model="coordinates">
       </form>
-
     </nav>
+    </div>
+
+    <div id="conditions">
+      <h1>It's currently<br><span>77 &amp; mostly cloudy</span><br>in Santa Monica</h1>
+      <p>HI: 79 // LOW: 33<br>wind: 5 mph<br>rain: 73%<br>snow: 0"</p>
+    </div> 
+
+      <div id="apparel-tab" class="bounce">
+        <p>suggested apparel</p>
+      </div>
+  </div>
       
-      <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
+<!--       <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
 
       <div id="conditions">
         <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}"</p>
-      </div> 
+      </div>  -->
 
-      <p> {{weather[0].clothing_type}}</p>
-      <p> {{weather[1].clothing_type}}</p>
-      <p> {{weather[2].clothing_type}}</p>
-      <p> {{weather[3].clothing_type}}</p>
-      <p> {{weather[4].clothing_type}}</p>
-      <p> {{weather[5].clothing_type}}</p>
-      <p> {{weather[6].clothing_type}}</p>
-      <p> {{weather[7].clothing_type}}</p>
-      <p> {{weather[8].clothing_type}}</p>
-      <p> {{weather[9].clothing_type}}</p>
 
+  <div class="col-xs-11 col-sm-11 col-md-11">
+      <div id="apparel">
+        <div id="clothing-col">
+          <h3>Day</h3>
+          <ul>
+            <li>cardigan</li>
+            <li>parka</li>
+            <li>boots</li>
+          </ul>
+        </div>
+        <div id="clothing-col">
+          <h3>Night</h3>
+          <ul>
+            <li>umbrella</li>
+            <li>beanie</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12" id="footer">
+    <div id="footer-content">
+      <span><a href="https://github.com/jsmit032/seasons-app" class="fa fa-github-alt"></a></span>
+      <p>Credit: <a href="http://www.wunderground.com/weather/api">Weather Underground</a></p>
     </div>
   </div>
+
 </div>
 
