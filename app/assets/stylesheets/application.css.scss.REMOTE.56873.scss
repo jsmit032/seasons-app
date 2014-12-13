@@ -40,23 +40,23 @@ html, .container-fluid {
   height: 80px;
   line-height: 40px;
   background-color: #fff;
-  text-align: center;
+  // text-align: center;
   position: absolute;
-  bottom: -40px;
+  bottom: 0;
   margin: 0 45%;
 }
 
 .bounce:hover {
   position:fixed;
-  bottom:-40px;
-  -webkit-animation:bounce 2s infinite;
+  bottom:0;
+  -webkit-animation:bounce 1s infinite;
 }
 
 @-webkit-keyframes bounce {
-  0%       { bottom:-40px; }
-  25%, 75% { bottom:-35px; }
-  50%      { bottom:-32px; }
-  100%     { bottom:-40px;}
+  0%       { bottom:5px; }
+  25%, 75% { bottom:7px; }
+  50%      { bottom:10px; }
+  100%     { bottom:0;}
 }
 
 #apparel {
@@ -72,7 +72,7 @@ html, .container-fluid {
   text-align: center;
 }
 
-#footer-content span {
+#footer-content a {
   font-size: 35px;
 }
 
