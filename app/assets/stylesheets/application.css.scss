@@ -18,6 +18,8 @@
 @import 'bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Lato:100);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, .container-fluid {
@@ -33,6 +35,26 @@ html, .container-fluid {
 
 #conditions {
   text-align: center;
+}
+
+#conditions h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+span {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 60px;
+}
+
+#italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-transform: lowercase;
+  font-size: 40px;
 }
 
 #apparel-tab {
