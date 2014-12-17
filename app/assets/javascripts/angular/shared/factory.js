@@ -17,7 +17,7 @@ angular.module('SeasonsApp')
     return deferred.promise;
   }
 
-  function getClothing(condition, bkcondition) {
+  function getClothing(daytempcondition, bkcondition) {
     var deferredClothing = $q.defer();
 
     // check for multiple params and count the number of params?
@@ -25,7 +25,7 @@ angular.module('SeasonsApp')
     // create url that accepts condition and bkcondition
     // 
     
-    $http.get('/getclothing?category1=' + condition + '&category2=' + bkcondition)
+    $http.get('/getclothing?category1=' + daytempcondition + '&category2=' + bkcondition)
       .success(function(dataClothing) {
         deferredClothing.resolve(dataClothing);
         console.log(dataClothing);
@@ -39,10 +39,10 @@ angular.module('SeasonsApp')
     return deferredClothing.promise;
   }
 
-  function getNightClothing(condition, bkcondition) {
+  function getNightClothing(nighttempcondition, nightweathercondition) {
     var deferredNightClothing = $q.defer();
 
-    $http.get('/getclothing?category1=' + condition + '&category2=' + bkcondition)
+    $http.get('/getclothing?category1=' + nighttempcondition + '&category2=' + nightweathercondition)
       .success(function(dataClothing) {
         deferredNightClothing.resolve(dataClothing);
         console.log(dataClothing);

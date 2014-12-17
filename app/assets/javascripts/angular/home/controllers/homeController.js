@@ -23,39 +23,69 @@ angular.module('SeasonsApp')
       // console.log("hi");
       $scope.place = data;
       $scope.temp = data.temp;
-      $scope.weather = angular.lowercase(data.condition);
+      $scope.nighttemp = data.templo;
+      $scope.dayweather = angular.lowercase(data.condition);
       $scope.nightweather = angular.lowercase(data.nightcond);
       $scope.bkcondition = "";
-      $scope.condition = "";
+      $scope.nightweathercondition = "";
+      $scope.daytempcondition = "";
+      $scope.nighttempcondition = "";
 
       switch(true) {
         case ($scope.temp < 33):
-          $scope.condition = "freezing";
+          $scope.daytempcondition = "freezing";
           break;
         case ($scope.temp < 41):
-          $scope.condition = "shivering";
+          $scope.daytempcondition = "shivering";
           break;
         case ($scope.temp < 51):
-          $scope.condition = "cold";
+          $scope.daytempcondition = "cold";
           break;        
         case ($scope.temp < 61):
-          $scope.condition = "chilly";
+          $scope.daytempcondition = "chilly";
           break;        
         case ($scope.temp < 71):
-          $scope.condition = "average";
+          $scope.daytempcondition = "average";
           break;        
         case ($scope.temp < 81):
-          $scope.condition = "warm";
+          $scope.daytempcondition = "warm";
           break;        
         case ($scope.temp < 91):
-          $scope.condition = "hot";
+          $scope.daytempcondition = "hot";
           break;          
         case ($scope.temp > 92):
-          $scope.condition = "dying";
+          $scope.daytempcondition = "dying";
+          break;
+      }      
+
+      switch(true) {
+        case ($scope.nighttemp < 33):
+          $scope.nighttempcondition = "freezing";
+          break;
+        case ($scope.nighttemp < 41):
+          $scope.nighttempcondition = "shivering";
+          break;
+        case ($scope.nighttemp < 51):
+          $scope.nighttempcondition = "cold";
+          break;        
+        case ($scope.nighttemp < 61):
+          $scope.nighttempcondition = "chilly";
+          break;        
+        case ($scope.nighttemp < 71):
+          $scope.nighttempcondition = "average";
+          break;        
+        case ($scope.nighttemp < 81):
+          $scope.nighttempcondition = "warm";
+          break;        
+        case ($scope.nighttemp < 91):
+          $scope.nighttempcondition = "hot";
+          break;          
+        case ($scope.nighttemp > 92):
+          $scope.nighttempcondition = "dying";
           break;
       }
 
-      switch($scope.weather) {
+      switch($scope.dayweather) {
         case "rain": 
         case "heavy rain": 
         case "light rain": 
@@ -113,7 +143,7 @@ angular.module('SeasonsApp')
         case "chance of thunderstroms": 
         case "chance of freezing rain": 
         case "freezing rain":
-          $scope.nightcondition = "rain";
+          $scope.nightweathercondition = "rain";
           break;
         case "chance of flurries": 
         case "flurries": 
@@ -124,18 +154,18 @@ angular.module('SeasonsApp')
         case "chance of flurries": 
         case "flurries": 
         case "sleet":
-          $scope.nightcondition = "snow";
+          $scope.nightweathercondition = "snow";
           break;
         case "wind": 
         case "windy":
-          $scope.nightcondition = "windy";
+          $scope.nightweathercondition = "windy";
           break;        
         case "mostly sunny": 
         case "sunny": 
         case "clear": 
         case "partly cloudy": 
         case "partly sunny":
-          $scope.nightcondition = "sunny";
+          $scope.nightweathercondition = "sunny";
           break;        
         case "fog": 
         case "haze": 
@@ -143,28 +173,28 @@ angular.module('SeasonsApp')
         case "mostly cloudy": 
         case "scattered clouds": 
         case "overcast":
-          $scope.nightcondition = "cloudy";
+          $scope.nightweathercondition = "cloudy";
           break;        
         default:
-          $scope.nightcondition = "unknown";
+          $scope.nightweathercondition = "unknown";
       }
 
       $scope.fetchClothing($scope.condition, $scope.bkcondition);
-      $scope.fetchNightClothing($scope.condition, $scope.nightcondition);
+      $scope.fetchNightClothing($scope.condition, $scope.nightweathercondition);
 
     });     
   }
 
 // grabs clothing from the api that was called based on location
   $scope.fetchClothing = function(condition, bkcondition) {
-    weatherService.getClothing($scope.condition, $scope.bkcondition).then(function(dataClothing) {
-      $scope.weather = dataClothing;
+    weatherService.getClothing($scope.daytempcondition, $scope.bkcondition).then(function(dataClothing) {
+      $scope.dayweather = dataClothing;
       // $scope.condition = dataClothing;
     });
   }
 
-  $scope.fetchNightClothing = function(nightcondition) {
-    weatherService.getNightClothing($scope.nightcondition).then(function(dataClothing) {
+  $scope.fetchNightClothing = function(condition, nightweathercondition) {
+    weatherService.getNightClothing($scope.nighttempcondition, $scope.nightweathercondition).then(function(dataClothing) {
       $scope.nightweather = dataClothing;
       // $scope.condition = dataClothing;
     });
