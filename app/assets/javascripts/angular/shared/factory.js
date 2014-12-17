@@ -17,7 +17,7 @@ angular.module('SeasonsApp')
     return deferred.promise;
   }
 
-  function getClothing(daytempcondition, bkcondition) {
+  function getClothing(temp, condition) {
     var deferredClothing = $q.defer();
 
     // check for multiple params and count the number of params?
@@ -25,7 +25,7 @@ angular.module('SeasonsApp')
     // create url that accepts condition and bkcondition
     // 
     
-    $http.get('/getclothing?category1=' + daytempcondition + '&category2=' + bkcondition)
+    $http.get('/getclothing?category1=' + temp + '&category2=' + condition)
       .success(function(dataClothing) {
         deferredClothing.resolve(dataClothing);
         console.log(dataClothing);
@@ -39,10 +39,10 @@ angular.module('SeasonsApp')
     return deferredClothing.promise;
   }
 
-  function getNightClothing(nighttempcondition, nightweathercondition) {
+  function getNightClothing(temp, condition) {
     var deferredNightClothing = $q.defer();
 
-    $http.get('/getclothing?category1=' + nighttempcondition + '&category2=' + nightweathercondition)
+    $http.get('/getclothing?category1=' + temp + '&category2=' + condition)
       .success(function(dataClothing) {
         deferredNightClothing.resolve(dataClothing);
         console.log(dataClothing);
@@ -55,10 +55,47 @@ angular.module('SeasonsApp')
 
     return deferredNightClothing.promise;
   }
+
+  function getNightClothingA(temp) {
+    var deferredNightClothingA = $q.defer();
+
+    $http.get('/getclothing?category1=' + temp)
+      .success(function(dataClothing) {
+        deferredNightClothingA.resolve(dataClothing);
+        console.log(dataClothing);
+      })
+      .error(function(err) {
+        console.log('Error retrieving data');
+        deferredNightClothingA.reject(err);
+      });
+
+
+    return deferredNightClothingA.promise;
+  }
+
+  function getNightClothingB(condition) {
+    var deferredNightClothingB = $q.defer();
+
+    $http.get('/getclothing?category1=' + condition)
+      .success(function(dataClothing) {
+        deferredNightClothingB.resolve(dataClothing);
+        console.log(dataClothing);
+      })
+      .error(function(err) {
+        console.log('Error retrieving data');
+        deferredNightClothingB.reject(err);
+      });
+
+
+    return deferredNightClothingB.promise;
+  }
+
   return {
     getWeather: getWeather,
     getClothing: getClothing,
-    getNightClothing: getNightClothing
+    getNightClothing: getNightClothing,
+    getNightClothingA: getNightClothingA,
+    getNightClothingB: getNightClothingB
   };
   
 }]);
