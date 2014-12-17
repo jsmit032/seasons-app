@@ -24,6 +24,7 @@ angular.module('SeasonsApp')
       $scope.place = data;
       $scope.temp = data.temp;
       $scope.weather = angular.lowercase(data.condition);
+      $scope.nightweather = angular.lowercase(data.nightcond);
       $scope.bkcondition = "";
       $scope.condition = "";
 
@@ -101,7 +102,56 @@ angular.module('SeasonsApp')
           $scope.bkcondition = "unknown";
       }
 
+        switch($scope.nightweather) {
+        case "rain": 
+        case "heavy rain": 
+        case "light rain": 
+        case "thunderstrom": 
+        case "thunderstroms": 
+        case "chance of rain": 
+        case "chance rain": 
+        case "chance of thunderstroms": 
+        case "chance of freezing rain": 
+        case "freezing rain":
+          $scope.nightcondition = "rain";
+          break;
+        case "chance of flurries": 
+        case "flurries": 
+        case "chance of snow":
+        case "light snow": 
+        case "snow":
+        case "heavy snow": 
+        case "chance of flurries": 
+        case "flurries": 
+        case "sleet":
+          $scope.nightcondition = "snow";
+          break;
+        case "wind": 
+        case "windy":
+          $scope.nightcondition = "windy";
+          break;        
+        case "mostly sunny": 
+        case "sunny": 
+        case "clear": 
+        case "partly cloudy": 
+        case "partly sunny":
+          $scope.nightcondition = "sunny";
+          break;        
+        case "fog": 
+        case "haze": 
+        case "cloudy": 
+        case "mostly cloudy": 
+        case "scattered clouds": 
+        case "overcast":
+          $scope.nightcondition = "cloudy";
+          break;        
+        default:
+          $scope.nightcondition = "unknown";
+      }
+
       $scope.fetchClothing($scope.condition, $scope.bkcondition);
+      $scope.fetchNightClothing($scope.condition, $scope.nightcondition);
+
     });     
   }
 
@@ -113,6 +163,12 @@ angular.module('SeasonsApp')
     });
   }
 
+  $scope.fetchNightClothing = function(nightcondition) {
+    weatherService.getNightClothing($scope.nightcondition).then(function(dataClothing) {
+      $scope.nightweather = dataClothing;
+      // $scope.condition = dataClothing;
+    });
+  }
   $scope.getLocation = function () {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition($scope.showPosition);

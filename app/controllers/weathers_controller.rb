@@ -44,8 +44,9 @@ class WeathersController < ApplicationController
     @snow = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["snow_day"]["in"]
     @wind = data.parsed_response["current_observation"]["wind_string"]
     @forecasttxt = data.parsed_response["forecast"]["txt_forecast"]["forecastday"][0]["fcttext"]
+    @nightcond = data.parsed_response["forecast"]["simpleforecast"]["forecastday"][0]["conditions"]
 
-    data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, bckgrdCondition: @bckgrdCondition, forecasttxt: @forecasttxt }
+    data = {temp: @temp, condition: @condition, city: @city, temphi: @temphi, templo: @templo, rain: @rain, snow: @snow, wind: @wind, bckgrdCondition: @bckgrdCondition, forecasttxt: @forecasttxt, nightcond: @nightcond }
 
     render json: data, status: 200
 
